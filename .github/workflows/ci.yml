@@ -25,8 +25,9 @@ jobs:
         run: python -m mypy
       - name: Tests (coverage >= 90%)
         run: pytest --cov --cov-report=term-missing --cov-report=xml
-      - name: Data room is reproducible
-        run: dealroom generate && git diff --exit-code -- data/
+      - name: Data room is reproducible (content, gold set and traps)
+        # PDF bytes vary with the zlib build; the extracted text and evidence locations must not.
+        run: dealroom generate && git diff --exit-code -- data/eval data/dataroom/ground_truth.json
       - name: Evaluation report is up to date
         run: dealroom eval && git diff --exit-code -- reports/eval.md
       - name: Demo runs offline

@@ -34,7 +34,8 @@ class Embedder(Protocol):
 def _normalise(matrix: NDArray[np.float64]) -> Matrix:
     norms = np.linalg.norm(matrix, axis=1, keepdims=True)
     norms[norms == 0] = 1.0
-    return (matrix / norms).astype(np.float32)
+    normalised: Matrix = (matrix / norms).astype(np.float32)
+    return normalised
 
 
 class LsaEmbedder:

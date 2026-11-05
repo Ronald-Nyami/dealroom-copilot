@@ -117,7 +117,7 @@ jobs:
       - name: Terraform fmt and validate
         working-directory: infra/terraform
         run: |
-          terraform fmt -check -recursive
+          terraform fmt -check -diff -recursive
           terraform init -backend=false
           terraform validate
       - uses: azure/setup-helm@v4

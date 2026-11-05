@@ -11,6 +11,7 @@ filings on small machines); table rows are kept as text lines.
 from __future__ import annotations
 
 import json
+import multiprocessing
 import re
 from collections import defaultdict
 from concurrent.futures import ProcessPoolExecutor
@@ -47,8 +48,14 @@ def build_indexes(pdf_dir: Path, out: Path, workers: int = 2) -> dict[str, int]:
     jobs = [(pdf, out) for pdf in sorted(pdf_dir.glob("*.pdf"))]
     if workers <= 1:
         return dict(map(_index_one, jobs))
-    with ProcessPoolExecutor(max_workers=workers) as pool:  # pragma: no cover - exercised by the CLI
-        return dict(pool.map(_index_one, jobs))
+    built: dict[str, int] = {}
+    # spawn, not fork: the parent may hold threads (downloads) and pymupdf state that a fork would copy.
+    context = multiprocessing.get_context("spawn")
+    with ProcessPoolExecutor(max_workers=workers, mp_context=context) as pool:  # pragma: no cover - CLI path
+        for done, (name, count) in enumerate(pool.map(_index_one, jobs), start=1):
+            built[name] = count
+            print(f"  [{done}/{len(jobs)}] {name}: {count} chunks", flush=True)
+    return built
 
 
 def gold_pages(question: dict[str, Any]) -> set[tuple[str, int]]:

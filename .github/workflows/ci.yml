@@ -81,6 +81,7 @@ jobs:
     # Public filings and contracts pinned by checksum in data/real/manifest.json (about 180 MB).
     runs-on: ubuntu-24.04
     continue-on-error: true
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

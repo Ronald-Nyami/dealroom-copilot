@@ -1,0 +1,71 @@
+[
+  {
+    "id": "revenue_mismatch",
+    "title": "FY2025 revenue in the IM does not match the audited accounts",
+    "description": "The information memorandum states FY2025 revenue of CHF 148.6 million; the audited income statement and the financial model show CHF 142.3 million. The CHF 6.3 million gap is not reconciled anywhere.",
+    "keywords": [
+      "148.6",
+      "142.3"
+    ],
+    "evidence": [
+      {
+        "file": "01_information_memorandum.pdf",
+        "page": 1,
+        "needle": "Revenue reached CHF 148.6 million in FY2025"
+      },
+      {
+        "file": "05_audited_financial_statements_FY2025.pdf",
+        "page": 2,
+        "needle": "Income statement for the year ended 31 December 2025"
+      }
+    ]
+  },
+  {
+    "id": "change_of_control",
+    "title": "Largest customer can terminate on change of control",
+    "description": "Clause 14.2 of the Brenntal agreement lets the buyer terminate on 90 days' notice if a third party acquires more than 50% of the Supplier without consent. Brenntal is 31.2% of FY2025 revenue and the legal due diligence has not reviewed this agreement.",
+    "keywords": [
+      "14.2",
+      "change of control",
+      "terminate"
+    ],
+    "evidence": [
+      {
+        "file": "06_customer_contract_brenntal_automotive.pdf",
+        "page": 2,
+        "needle": "more than 50% of the shares or voting"
+      },
+      {
+        "file": "24_customer_concentration.xlsx",
+        "sheet": "FY2025",
+        "row": 2,
+        "cell": "A2",
+        "needle": "Brenntal Automotive GmbH"
+      }
+    ]
+  },
+  {
+    "id": "covenant_headroom",
+    "title": "Net leverage covenant close to breach in FY2026",
+    "description": "The model shows FY2026 net leverage of 4.38x against a 4.50x covenant, a headroom of 2.7%. A revenue shortfall of the size flagged in the chair's note would push the covenant close to breach.",
+    "keywords": [
+      "4.38",
+      "4.50",
+      "headroom"
+    ],
+    "evidence": [
+      {
+        "file": "23_financial_model.xlsx",
+        "sheet": "LBO",
+        "row": 17,
+        "cell": "A17",
+        "needle": "Net leverage"
+      },
+      {
+        "file": "20_senior_facilities_term_sheet.pdf",
+        "page": 2,
+        "needle": "must not exceed 4.50x"
+      }
+    ]
+  }
+]

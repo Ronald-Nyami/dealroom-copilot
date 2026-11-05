@@ -1,0 +1,2118 @@
+{
+  "config": {
+    "files": 37,
+    "chunks": 130,
+    "questions": 117,
+    "llm": "stub",
+    "reranker": "lexical-cross-scorer",
+    "embedder": "local-lsa"
+  },
+  "retrieval": {
+    "bm25": {
+      "recall@3": 0.9714285714285714,
+      "recall@5": 0.9809523809523809,
+      "recall@10": 0.9857142857142858,
+      "ndcg@10": 0.9473040801299802,
+      "mrr": 0.9476190476190476,
+      "recall@5_by_type": {
+        "cross_doc": 0.8333333333333334,
+        "fact": 1.0,
+        "numeric": 1.0,
+        "ocr": 1.0
+      }
+    },
+    "dense": {
+      "recall@3": 0.9571428571428572,
+      "recall@5": 0.9714285714285714,
+      "recall@10": 0.9761904761904762,
+      "ndcg@10": 0.9093267564248873,
+      "mrr": 0.903968253968254,
+      "recall@5_by_type": {
+        "cross_doc": 0.8333333333333334,
+        "fact": 0.9807692307692307,
+        "numeric": 1.0,
+        "ocr": 1.0
+      }
+    },
+    "hybrid": {
+      "recall@3": 0.9619047619047619,
+      "recall@5": 0.9714285714285714,
+      "recall@10": 0.9809523809523809,
+      "ndcg@10": 0.9428775213671959,
+      "mrr": 0.9486772486772487,
+      "recall@5_by_type": {
+        "cross_doc": 0.8333333333333334,
+        "fact": 0.9807692307692307,
+        "numeric": 1.0,
+        "ocr": 1.0
+      }
+    },
+    "hybrid_rerank": {
+      "recall@3": 0.9571428571428572,
+      "recall@5": 0.9619047619047619,
+      "recall@10": 0.9761904761904762,
+      "ndcg@10": 0.945680369941832,
+      "mrr": 0.9470899470899471,
+      "recall@5_by_type": {
+        "cross_doc": 0.75,
+        "fact": 0.9807692307692307,
+        "numeric": 1.0,
+        "ocr": 1.0
+      }
+    },
+    "questions": 105
+  },
+  "answers": {
+    "citation_precision": 0.8660714285714286,
+    "groundedness": 0.9805825242718447,
+    "numeric_accuracy": 0.9444444444444444,
+    "numeric_questions": 72,
+    "abstention_accuracy": 0.9316239316239316,
+    "abstention_precision": 0.6428571428571429,
+    "abstention_recall": 0.75,
+    "abstention_counts": {
+      "tp": 9,
+      "fp": 5,
+      "fn": 3,
+      "tn": 100
+    },
+    "answers": [
+      {
+        "id": "q001",
+        "type": "fact",
+        "question": "In which year was the company founded?",
+        "answer": "The Company is a Swiss precision machining specialist founded in 1987 in Thun. [1]",
+        "abstained": false,
+        "coverage": 0.731,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "e632459ff51c",
+            "citation": "01_information_memorandum.pdf, p. 1",
+            "text": "The Company is a Swiss precision machining specialist founded in 1987 in Thun."
+          }
+        ]
+      },
+      {
+        "id": "q002",
+        "type": "fact",
+        "question": "What share of the company do the Hosmatter family intend to sell?",
+        "answer": "The Company is owned by the Hosmatter family, who intend to sell 70% of the shares and retain 30% alongside management. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "54d24aa8f095",
+            "citation": "01_information_memorandum.pdf, p. 1",
+            "text": "The Company is owned by the Hosmatter family, who intend to sell 70% of the shares and retain 30% alongside management."
+          }
+        ]
+      },
+      {
+        "id": "q003",
+        "type": "fact",
+        "question": "Where is the second plant located?",
+        "answer": "He previously managed a rail components plant and led the start-up of the Brno second shift. [1]",
+        "abstained": false,
+        "coverage": 0.58,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "5d136954cbf3",
+            "citation": "10_management_cvs.pdf, p. 2",
+            "text": "He previously managed a rail components plant and led the start-up of the Brno second shift."
+          }
+        ]
+      },
+      {
+        "id": "q004",
+        "type": "fact",
+        "question": "When did the Brno plant open?",
+        "answer": "The Brno plant opened in 2014 and focuses on high-volume turned parts. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "8a6ed74c69fd",
+            "citation": "01_information_memorandum.pdf, p. 2",
+            "text": "The Brno plant opened in 2014 and focuses on high-volume turned parts."
+          }
+        ]
+      },
+      {
+        "id": "q005",
+        "type": "fact",
+        "question": "How many people did the company employ at the end of FY2025?",
+        "answer": "At the end of FY2025 the Company employed 612 people, of whom 418 work in Thun and 194 in Brno. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "8a6ed74c69fd",
+            "citation": "01_information_memorandum.pdf, p. 2",
+            "text": "At the end of FY2025 the Company employed 612 people, of whom 418 work in Thun and 194 in Brno."
+          }
+        ]
+      },
+      {
+        "id": "q006",
+        "type": "fact",
+        "question": "How many employees work in Brno?",
+        "answer": "Employees in Brno are covered by a collective agreement that runs until 31 March 2027. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c7f8d86080b0",
+            "citation": "16_hr_and_pensions_summary.pdf, p. 1",
+            "text": "Employees in Brno are covered by a collective agreement that runs until 31 March 2027."
+          }
+        ]
+      },
+      {
+        "id": "q007",
+        "type": "fact",
+        "question": "What share of FY2025 revenue came from rail customers?",
+        "answer": "Revenue by end market, FY2025 (share of revenue): Rail, Share: 19% [1]",
+        "abstained": false,
+        "coverage": 0.552,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "9fe7cfd30b26",
+            "citation": "01_information_memorandum.pdf, p. 2",
+            "text": "Revenue by end market, FY2025 (share of revenue): Rail, Share: 19%"
+          }
+        ]
+      },
+      {
+        "id": "q008",
+        "type": "fact",
+        "question": "What share of automotive revenue comes from electric-vehicle drivetrain parts?",
+        "answer": "Electric-vehicle drivetrain parts represent 41% of automotive revenue. [1]",
+        "abstained": false,
+        "coverage": 0.699,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "8a6ed74c69fd",
+            "citation": "01_information_memorandum.pdf, p. 2",
+            "text": "Electric-vehicle drivetrain parts represent 41% of automotive revenue."
+          }
+        ]
+      },
+      {
+        "id": "q009",
+        "type": "fact",
+        "question": "How large was the order backlog at 30 September 2025?",
+        "answer": "Order backlog stood at CHF 96.4 million on 30 September 2025, equivalent to roughly eight months of revenue. [1]",
+        "abstained": false,
+        "coverage": 0.73,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "e632459ff51c",
+            "citation": "01_information_memorandum.pdf, p. 1",
+            "text": "Order backlog stood at CHF 96.4 million on 30 September 2025, equivalent to roughly eight months of revenue."
+          }
+        ]
+      },
+      {
+        "id": "q010",
+        "type": "fact",
+        "question": "Since when has the company worked with Brenntal Automotive?",
+        "answer": "Brenntal Automotive GmbH (Revenue CHF m: 44.4, Share of revenue: 0.312, Segment: Automotive) [1]",
+        "abstained": false,
+        "coverage": 0.52,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "393af9e0b21b",
+            "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
+            "text": "Brenntal Automotive GmbH (Revenue CHF m: 44.4, Share of revenue: 0.312, Segment: Automotive)"
+          }
+        ]
+      },
+      {
+        "id": "q011",
+        "type": "fact",
+        "question": "When is start of production of the EV-7 platform planned according to the information memorandum?",
+        "answer": "Brenntal Automotive has nominated the Company as single source for the motor housing of its EV-7 electric drive platform, with start of production planned for Q2 2026. [1]",
+        "abstained": false,
+        "coverage": 0.837,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "f4510785fc52",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "Brenntal Automotive has nominated the Company as single source for the motor housing of its EV-7 electric drive platform, with start of production planned for Q2 2026."
+          }
+        ]
+      },
+      {
+        "id": "q012",
+        "type": "fact",
+        "question": "How many CNC machining centres does the Thun plant run?",
+        "answer": "The Thun plant runs 74 CNC machining centres in a three-shift pattern. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "92dacc73263c",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "The Thun plant runs 74 CNC machining centres in a three-shift pattern."
+          }
+        ]
+      },
+      {
+        "id": "q013",
+        "type": "fact",
+        "question": "What was the scrap rate in FY2025?",
+        "answer": "Overall equipment effectiveness was 78% in FY2025 and the scrap rate was 1.8%. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "92dacc73263c",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "Overall equipment effectiveness was 78% in FY2025 and the scrap rate was 1.8%."
+          }
+        ]
+      },
+      {
+        "id": "q014",
+        "type": "fact",
+        "question": "What was overall equipment effectiveness in Thun in FY2025?",
+        "answer": "Overall equipment effectiveness was 78% in FY2025 and the scrap rate was 1.8%. [1]",
+        "abstained": false,
+        "coverage": 0.851,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "92dacc73263c",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "Overall equipment effectiveness was 78% in FY2025 and the scrap rate was 1.8%."
+          }
+        ]
+      },
+      {
+        "id": "q015",
+        "type": "fact",
+        "question": "When did the chief executive officer join the company?",
+        "answer": "The Company is led by Chief Executive Officer [PERSON_001], who joined in 2016, Chief Financial Officer [PERSON_002], who joined in 2019, and Chief Operating Officer [PERSON_003], who joined in 2021. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "354133fd831c",
+            "citation": "01_information_memorandum.pdf, p. 4",
+            "text": "The Company is led by Chief Executive Officer [PERSON_001], who joined in 2016, Chief Financial Officer [PERSON_002], who joined in 2019, and Chief Operating Officer [PERSON_003], who joined in 2021."
+          }
+        ]
+      },
+      {
+        "id": "q016",
+        "type": "fact",
+        "question": "What stake will management hold after closing?",
+        "answer": "Management intends to reinvest part of its proceeds and hold a combined 8% of the shares after closing. [1]",
+        "abstained": false,
+        "coverage": 0.662,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "354133fd831c",
+            "citation": "01_information_memorandum.pdf, p. 4",
+            "text": "Management intends to reinvest part of its proceeds and hold a combined 8% of the shares after closing."
+          }
+        ]
+      },
+      {
+        "id": "q017",
+        "type": "fact",
+        "question": "By when are non-binding offers due?",
+        "answer": "Non-binding offers are requested by 14 November 2025. [1]",
+        "abstained": false,
+        "coverage": 0.816,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "210cb2f62bdb",
+            "citation": "01_information_memorandum.pdf, p. 4",
+            "text": "Non-binding offers are requested by 14 November 2025."
+          }
+        ]
+      },
+      {
+        "id": "q018",
+        "type": "fact",
+        "question": "What was Brno utilisation in FY2025?",
+        "answer": "Brno utilisation was 71% in FY2025. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "d45f9409df75",
+            "citation": "02_management_presentation.pdf, p. 1",
+            "text": "Brno utilisation was 71% in FY2025."
+          }
+        ]
+      },
+      {
+        "id": "q019",
+        "type": "fact",
+        "question": "What medical technology revenue does management target for FY2028?",
+        "answer": "Management targets medical technology revenue of CHF 26 million by FY2028. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "122b4f61c694",
+            "citation": "02_management_presentation.pdf, p. 3",
+            "text": "Management targets medical technology revenue of CHF 26 million by FY2028."
+          }
+        ]
+      },
+      {
+        "id": "q020",
+        "type": "fact",
+        "question": "How many apprentices does the company train?",
+        "answer": "The Company trains 38 apprentices across both sites. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "2d75ab8a5675",
+            "citation": "02_management_presentation.pdf, p. 4",
+            "text": "The Company trains 38 apprentices across both sites."
+          }
+        ]
+      },
+      {
+        "id": "q021",
+        "type": "fact",
+        "question": "What was voluntary staff turnover in FY2025?",
+        "answer": "Voluntary staff turnover was 6.4% in FY2025. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "2d75ab8a5675",
+            "citation": "02_management_presentation.pdf, p. 4",
+            "text": "Voluntary staff turnover was 6.4% in FY2025."
+          }
+        ]
+      },
+      {
+        "id": "q022",
+        "type": "fact",
+        "question": "Under which accounting framework are the financial statements prepared?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.417,
+        "citations": []
+      },
+      {
+        "id": "q023",
+        "type": "fact",
+        "question": "Who audited the FY2025 financial statements?",
+        "answer": "Commentary May 2025: figures are management estimates before audit adjustments and may differ from the audited financial statements. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "f0fe90135fd1",
+            "citation": "30_monthly_management_accounts_FY2025.pdf, p. 5",
+            "text": "Commentary May 2025: figures are management estimates before audit adjustments and may differ from the audited financial statements."
+          }
+        ]
+      },
+      {
+        "id": "q024",
+        "type": "fact",
+        "question": "When does the Brenntal framework agreement expire?",
+        "answer": "This framework supply agreement is made between Brenntal Automotive GmbH, [ADDRESS_001], Germany (the Buyer) and Alpine Precision Components AG, [ADDRESS_002], Switzerland (the Supplier). [1]",
+        "abstained": false,
+        "coverage": 0.657,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c04847d4802d",
+            "citation": "06_customer_contract_brenntal_automotive.pdf, p. 1",
+            "text": "This framework supply agreement is made between Brenntal Automotive GmbH, [ADDRESS_001], Germany (the Buyer) and Alpine Precision Components AG, [ADDRESS_002], Switzerland (the Supplier)."
+          }
+        ]
+      },
+      {
+        "id": "q025",
+        "type": "fact",
+        "question": "What annual price reduction does the company grant Brenntal from 2026?",
+        "answer": "From 1 January 2026 the Supplier grants the Buyer an annual productivity reduction of 2.0% on all part prices. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "afe3ded5aa99",
+            "citation": "06_customer_contract_brenntal_automotive.pdf, p. 1",
+            "text": "From 1 January 2026 the Supplier grants the Buyer an annual productivity reduction of 2.0% on all part prices."
+          }
+        ]
+      },
+      {
+        "id": "q026",
+        "type": "fact",
+        "question": "What is the liability cap in the Brenntal agreement?",
+        "answer": "The Supplier's aggregate liability under this agreement is capped at EUR 15 million per contract year. [1]",
+        "abstained": false,
+        "coverage": 0.596,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "8a74befa7634",
+            "citation": "06_customer_contract_brenntal_automotive.pdf, p. 2",
+            "text": "The Supplier's aggregate liability under this agreement is capped at EUR 15 million per contract year."
+          }
+        ]
+      },
+      {
+        "id": "q027",
+        "type": "fact",
+        "question": "Which law governs the Brenntal agreement?",
+        "answer": "This agreement is governed by German law. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "89915e002537",
+            "citation": "06_customer_contract_brenntal_automotive.pdf, p. 3",
+            "text": "This agreement is governed by German law."
+          }
+        ]
+      },
+      {
+        "id": "q028",
+        "type": "fact",
+        "question": "What are the payment terms in the Nordwind agreement?",
+        "answer": "Payment terms are 60 days from invoice. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "3e915a5c6ff6",
+            "citation": "07_customer_contract_nordwind_rail.pdf, p. 1",
+            "text": "Payment terms are 60 days from invoice."
+          }
+        ]
+      },
+      {
+        "id": "q029",
+        "type": "fact",
+        "question": "Does a change of control allow Nordwind to terminate its agreement?",
+        "answer": "We reviewed the change-of-control provisions of the Nordwind and Valtrona agreements. [1]",
+        "abstained": false,
+        "coverage": 0.575,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "d25c0d81b52d",
+            "citation": "11_legal_due_diligence_summary.pdf, p. 2",
+            "text": "We reviewed the change-of-control provisions of the Nordwind and Valtrona agreements."
+          }
+        ]
+      },
+      {
+        "id": "q030",
+        "type": "fact",
+        "question": "How often may Valtrona audit the medical technology line?",
+        "answer": "Valtrona may audit the Supplier's medical technology line twice per year with 14 days' notice. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "731fd89b3c6c",
+            "citation": "08_customer_contract_valtrona_medical.pdf, p. 2",
+            "text": "Valtrona may audit the Supplier's medical technology line twice per year with 14 days' notice."
+          }
+        ]
+      },
+      {
+        "id": "q031",
+        "type": "fact",
+        "question": "What is the annual base rent for the Thun site?",
+        "answer": "The annual base rent is CHF 2.85 million, payable quarterly in advance. [1]",
+        "abstained": false,
+        "coverage": 0.78,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "cbdd242e1ffa",
+            "citation": "09_lease_agreement_thun.pdf, p. 1",
+            "text": "The annual base rent is CHF 2.85 million, payable quarterly in advance."
+          }
+        ]
+      },
+      {
+        "id": "q032",
+        "type": "fact",
+        "question": "When does the Thun lease end?",
+        "answer": "The lease term ends on 30 June 2033. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "8f900d2b283e",
+            "citation": "09_lease_agreement_thun.pdf, p. 2",
+            "text": "The lease term ends on 30 June 2033."
+          }
+        ]
+      },
+      {
+        "id": "q033",
+        "type": "fact",
+        "question": "What is the floor area of the Thun site?",
+        "answer": "Aarefeld Immobilien AG (the Landlord) leases to Alpine Precision Components AG (the Tenant) the production hall, offices and yard at [ADDRESS_002], with a floor area of 21,400 square metres. [1]",
+        "abstained": false,
+        "coverage": 0.752,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "cbdd242e1ffa",
+            "citation": "09_lease_agreement_thun.pdf, p. 1",
+            "text": "Aarefeld Immobilien AG (the Landlord) leases to Alpine Precision Components AG (the Tenant) the production hall, offices and yard at [ADDRESS_002], with a floor area of 21,400 square metres."
+          }
+        ]
+      },
+      {
+        "id": "q034",
+        "type": "fact",
+        "question": "What is the amount of the Ostara Pumps warranty claim?",
+        "answer": "Ostara Pumps has filed a warranty claim of CHF 1.2 million concerning valve bodies delivered in 2024. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "0dc28b1bddad",
+            "citation": "11_legal_due_diligence_summary.pdf, p. 1",
+            "text": "Ostara Pumps has filed a warranty claim of CHF 1.2 million concerning valve bodies delivered in 2024."
+          }
+        ]
+      },
+      {
+        "id": "q035",
+        "type": "fact",
+        "question": "How many patents and patent applications does the company own?",
+        "answer": "The Company owns 14 registered patents and patent applications, mainly for clamping fixtures. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "94d83efa19a8",
+            "citation": "11_legal_due_diligence_summary.pdf, p. 1",
+            "text": "The Company owns 14 registered patents and patent applications, mainly for clamping fixtures."
+          }
+        ]
+      },
+      {
+        "id": "q036",
+        "type": "fact",
+        "question": "How fast is the addressable market expected to grow?",
+        "answer": "The addressable European market for precision machined drivetrain and fluid-control parts is estimated at EUR 4.1 billion, growing at 5.8% a year to 2030. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "26e39e007e30",
+            "citation": "12_commercial_due_diligence_summary.pdf, p. 1",
+            "text": "The addressable European market for precision machined drivetrain and fluid-control parts is estimated at EUR 4.1 billion, growing at 5.8% a year to 2030."
+          }
+        ]
+      },
+      {
+        "id": "q037",
+        "type": "fact",
+        "question": "What on-time delivery rate did customers report for FY2025?",
+        "answer": "Customer interviews rated the Company's delivery reliability at 96% on-time in FY2025. [1]",
+        "abstained": false,
+        "coverage": 0.822,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "26e39e007e30",
+            "citation": "12_commercial_due_diligence_summary.pdf, p. 1",
+            "text": "Customer interviews rated the Company's delivery reliability at 96% on-time in FY2025."
+          }
+        ]
+      },
+      {
+        "id": "q038",
+        "type": "fact",
+        "question": "What was the group effective tax rate in FY2025?",
+        "answer": "The group effective tax rate was 22.0% in FY2025. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "229c9d4506fd",
+            "citation": "13_tax_due_diligence_summary.pdf, p. 1",
+            "text": "The group effective tax rate was 22.0% in FY2025."
+          }
+        ]
+      },
+      {
+        "id": "q039",
+        "type": "fact",
+        "question": "When does the Czech investment incentive expire?",
+        "answer": "The Czech subsidiary benefits from an investment incentive that expires at the end of 2026. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "229c9d4506fd",
+            "citation": "13_tax_due_diligence_summary.pdf, p. 1",
+            "text": "The Czech subsidiary benefits from an investment incentive that expires at the end of 2026."
+          }
+        ]
+      },
+      {
+        "id": "q040",
+        "type": "fact",
+        "question": "What is the estimated environmental remediation cost at Thun?",
+        "answer": "The assessor rates the risk as low and estimates remediation, if ever required, at CHF 0.3 million. [1]",
+        "abstained": false,
+        "coverage": 0.799,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "f5b4729ae5ea",
+            "citation": "14_environmental_site_assessment.pdf, p. 1",
+            "text": "The assessor rates the risk as low and estimates remediation, if ever required, at CHF 0.3 million."
+          }
+        ]
+      },
+      {
+        "id": "q041",
+        "type": "fact",
+        "question": "Is the company certified to ISO 27001?",
+        "answer": "The Company is not certified to ISO 27001. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "bc17ed3741ad",
+            "citation": "17_it_and_cybersecurity_review.pdf, p. 1",
+            "text": "The Company is not certified to ISO 27001."
+          }
+        ]
+      },
+      {
+        "id": "q042",
+        "type": "fact",
+        "question": "How many customer complaints were recorded in FY2025?",
+        "answer": "Customer complaints fell from 41 in FY2024 to 29 in FY2025. [1]",
+        "abstained": false,
+        "coverage": 0.602,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "fa1882f89530",
+            "citation": "18_quality_and_certifications.pdf, p. 1",
+            "text": "Customer complaints fell from 41 in FY2024 to 29 in FY2025."
+          }
+        ]
+      },
+      {
+        "id": "q043",
+        "type": "fact",
+        "question": "What share of purchases did the largest raw-material supplier account for?",
+        "answer": "The largest supplier accounted for 22% of purchases in FY2025. [1]",
+        "abstained": false,
+        "coverage": 0.489,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "ae3f786112d2",
+            "citation": "21_supplier_overview.pdf, p. 1",
+            "text": "The largest supplier accounted for 22% of purchases in FY2025."
+          }
+        ]
+      },
+      {
+        "id": "q044",
+        "type": "fact",
+        "question": "What is the share capital of the company?",
+        "answer": "The share capital of the Company is CHF 4.0 million, divided into 40,000 registered shares. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "530c344475b4",
+            "citation": "22_corporate_structure.pdf, p. 1",
+            "text": "The share capital of the Company is CHF 4.0 million, divided into 40,000 registered shares."
+          }
+        ]
+      },
+      {
+        "id": "q045",
+        "type": "fact",
+        "question": "Until when does the Brno collective agreement run?",
+        "answer": "Employees in Brno are covered by a collective agreement that runs until 31 March 2027. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c7f8d86080b0",
+            "citation": "16_hr_and_pensions_summary.pdf, p. 1",
+            "text": "Employees in Brno are covered by a collective agreement that runs until 31 March 2027."
+          }
+        ]
+      },
+      {
+        "id": "q046",
+        "type": "fact",
+        "question": "What is the interest cover covenant?",
+        "answer": "Interest cover (EBITDA to net interest) must be at least 3.00x on each test date. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "1d26fdc0e487",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 2",
+            "text": "Interest cover (EBITDA to net interest) must be at least 3.00x on each test date."
+          }
+        ]
+      },
+      {
+        "id": "q047",
+        "type": "fact",
+        "question": "Who is the lead arranger of the senior facilities?",
+        "answer": "Lead arranger: Lakeshore Credit Partners. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "92ce2ca9b5ee",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 1",
+            "text": "Lead arranger: Lakeshore Credit Partners."
+          }
+        ]
+      },
+      {
+        "id": "q048",
+        "type": "fact",
+        "question": "Can Ostara Pumps terminate its supply agreement for convenience?",
+        "answer": "Either party may terminate the agreement for convenience with twelve months' written notice. [1]",
+        "abstained": false,
+        "coverage": 0.839,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "4faaf639927c",
+            "citation": "32_customer_contract_ostara_pumps.pdf, p. 1",
+            "text": "Either party may terminate the agreement for convenience with twelve months' written notice."
+          }
+        ]
+      },
+      {
+        "id": "q049",
+        "type": "fact",
+        "question": "What can Lindqvist Hydraulics do if the company changes control?",
+        "answer": "If the Supplier undergoes a change of control, Lindqvist may ask to renegotiate prices within six months. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "5488d10cf41e",
+            "citation": "33_customer_contract_lindqvist_hydraulics.pdf, p. 1",
+            "text": "If the Supplier undergoes a change of control, Lindqvist may ask to renegotiate prices within six months."
+          }
+        ]
+      },
+      {
+        "id": "q050",
+        "type": "fact",
+        "question": "What is the annual rent of the Brno warehouse?",
+        "answer": "The annual rent is CZK 4.9 million and the lease ends on 31 December 2028. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "88b627b21a18",
+            "citation": "34_lease_agreement_brno_warehouse.pdf, p. 1",
+            "text": "The annual rent is CZK 4.9 million and the lease ends on 31 December 2028."
+          }
+        ]
+      },
+      {
+        "id": "q051",
+        "type": "fact",
+        "question": "What happens to the existing bank loan on a change of control?",
+        "answer": "The loan becomes repayable on a change of control of the borrower. [1]",
+        "abstained": false,
+        "coverage": 0.748,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "89da68491b99",
+            "citation": "37_existing_facility_agreement_2019.pdf, p. 2",
+            "text": "The loan becomes repayable on a change of control of the borrower."
+          }
+        ]
+      },
+      {
+        "id": "q052",
+        "type": "fact",
+        "question": "What FY2025 budget did the board approve in December 2024?",
+        "answer": "The board approved the FY2025 budget of CHF 140.0 million revenue and CHF 24.5 million EBITDA. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "b80190ede0c7",
+            "citation": "36_board_minutes_q4_2024.pdf, p. 1",
+            "text": "The board approved the FY2025 budget of CHF 140.0 million revenue and CHF 24.5 million EBITDA."
+          }
+        ]
+      },
+      {
+        "id": "q053",
+        "type": "numeric",
+        "question": "What headcount did the management accounts show for March 2025?",
+        "answer": "Key figures March 2025 (CHF million, unaudited): Headcount, March 2025: 603 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "730021af804b",
+            "citation": "30_monthly_management_accounts_FY2025.pdf, p. 3",
+            "text": "Key figures March 2025 (CHF million, unaudited): Headcount, March 2025: 603"
+          }
+        ]
+      },
+      {
+        "id": "q054",
+        "type": "numeric",
+        "question": "What was audited net revenue in FY2025?",
+        "answer": "Income statement for the year ended 31 December 2025 (CHF million): Net revenue, FY2025: 142.3 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "d96aaced9d25",
+            "citation": "05_audited_financial_statements_FY2025.pdf, p. 2",
+            "text": "Income statement for the year ended 31 December 2025 (CHF million): Net revenue, FY2025: 142.3"
+          }
+        ]
+      },
+      {
+        "id": "q055",
+        "type": "numeric",
+        "question": "What was audited net revenue in FY2024?",
+        "answer": "Income statement for the year ended 31 December 2024 (CHF million): Net revenue, FY2024: 131.0 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "47b9111ade34",
+            "citation": "04_audited_financial_statements_FY2024.pdf, p. 2",
+            "text": "Income statement for the year ended 31 December 2024 (CHF million): Net revenue, FY2024: 131.0"
+          }
+        ]
+      },
+      {
+        "id": "q056",
+        "type": "numeric",
+        "question": "What was net revenue in FY2023?",
+        "answer": "Income statement for the year ended 31 December 2023 (CHF million): Net revenue, FY2023: 118.4 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "5336c9f059b1",
+            "citation": "03_audited_financial_statements_FY2023.pdf, p. 2",
+            "text": "Income statement for the year ended 31 December 2023 (CHF million): Net revenue, FY2023: 118.4"
+          }
+        ]
+      },
+      {
+        "id": "q057",
+        "type": "numeric",
+        "question": "What was EBITDA in FY2025?",
+        "answer": "Budget FY2026 versus actual FY2025 (CHF million): EBITDA, FY2025 actual: 25.1 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "1c52b5d3bc8d",
+            "citation": "02_management_presentation.pdf, p. 2",
+            "text": "Budget FY2026 versus actual FY2025 (CHF million): EBITDA, FY2025 actual: 25.1"
+          }
+        ]
+      },
+      {
+        "id": "q058",
+        "type": "numeric",
+        "question": "What was net income in FY2024?",
+        "answer": "Income statement for the year ended 31 December 2024 (CHF million): Net income, FY2024: 10.9 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "47b9111ade34",
+            "citation": "04_audited_financial_statements_FY2024.pdf, p. 2",
+            "text": "Income statement for the year ended 31 December 2024 (CHF million): Net income, FY2024: 10.9"
+          }
+        ]
+      },
+      {
+        "id": "q059",
+        "type": "numeric",
+        "question": "What was EBIT in FY2023?",
+        "answer": "Income statement for the year ended 31 December 2023 (CHF million): EBIT, FY2023: 13.1 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "5336c9f059b1",
+            "citation": "03_audited_financial_statements_FY2023.pdf, p. 2",
+            "text": "Income statement for the year ended 31 December 2023 (CHF million): EBIT, FY2023: 13.1"
+          }
+        ]
+      },
+      {
+        "id": "q060",
+        "type": "numeric",
+        "question": "How much cash did the company hold at 31 December 2025?",
+        "answer": "Balance sheet at 31 December 2025 (CHF million): Cash and cash equivalents, 31.12.2025: 14.2 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "7dae662a26f1",
+            "citation": "05_audited_financial_statements_FY2025.pdf, p. 3",
+            "text": "Balance sheet at 31 December 2025 (CHF million): Cash and cash equivalents, 31.12.2025: 14.2"
+          }
+        ]
+      },
+      {
+        "id": "q061",
+        "type": "numeric",
+        "question": "What were total assets at 31 December 2024?",
+        "answer": "Balance sheet at 31 December 2024 (CHF million): Total assets, 31.12.2024: 156.1 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "e78706f4cf55",
+            "citation": "04_audited_financial_statements_FY2024.pdf, p. 3",
+            "text": "Balance sheet at 31 December 2024 (CHF million): Total assets, 31.12.2024: 156.1"
+          }
+        ]
+      },
+      {
+        "id": "q062",
+        "type": "numeric",
+        "question": "What were inventories at 31 December 2025?",
+        "answer": "Balance sheet at 31 December 2025 (CHF million): Inventories, 31.12.2025: 31.4 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "7dae662a26f1",
+            "citation": "05_audited_financial_statements_FY2025.pdf, p. 3",
+            "text": "Balance sheet at 31 December 2025 (CHF million): Inventories, 31.12.2025: 31.4"
+          }
+        ]
+      },
+      {
+        "id": "q063",
+        "type": "numeric",
+        "question": "What was financial debt at 31 December 2023?",
+        "answer": "Balance sheet at 31 December 2023 (CHF million): Financial debt, 31.12.2023: 44.0 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "2a61398ffd28",
+            "citation": "03_audited_financial_statements_FY2023.pdf, p. 3",
+            "text": "Balance sheet at 31 December 2023 (CHF million): Financial debt, 31.12.2023: 44.0"
+          }
+        ]
+      },
+      {
+        "id": "q064",
+        "type": "numeric",
+        "question": "How large was the dividend paid in 2025?",
+        "answer": "Note 12: The Company paid a dividend of CHF 3.1 million to its shareholders in 2025. [1]",
+        "abstained": false,
+        "coverage": 0.628,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "6fd07f775e81",
+            "citation": "05_audited_financial_statements_FY2025.pdf, p. 3",
+            "text": "Note 12: The Company paid a dividend of CHF 3.1 million to its shareholders in 2025."
+          }
+        ]
+      },
+      {
+        "id": "q065",
+        "type": "numeric",
+        "question": "What was cash flow from operating activities in FY2025?",
+        "answer": "Note 9: Cash flow from operating activities was CHF 24.3 million and capital expenditure was CHF 9.1 million in FY2025. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "6fd07f775e81",
+            "citation": "05_audited_financial_statements_FY2025.pdf, p. 3",
+            "text": "Note 9: Cash flow from operating activities was CHF 24.3 million and capital expenditure was CHF 9.1 million in FY2025."
+          }
+        ]
+      },
+      {
+        "id": "q066",
+        "type": "numeric",
+        "question": "What revenue does the model forecast for FY2027?",
+        "answer": "Revenue, FY2027E: 160.2 [1]",
+        "abstained": false,
+        "coverage": 0.613,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "046be3384fb7",
+            "citation": "23_financial_model.xlsx, sheet P&L, rows A1:A6",
+            "text": "Revenue, FY2027E: 160.2"
+          }
+        ]
+      },
+      {
+        "id": "q067",
+        "type": "numeric",
+        "question": "What EBITDA margin does the model show for FY2028?",
+        "answer": "EBITDA margin, FY2028E: 0.181 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "046be3384fb7",
+            "citation": "23_financial_model.xlsx, sheet P&L, rows A1:A6",
+            "text": "EBITDA margin, FY2028E: 0.181"
+          }
+        ]
+      },
+      {
+        "id": "q068",
+        "type": "numeric",
+        "question": "What EBITDA does the budget assume for FY2026?",
+        "answer": "The budget assumes EV-7 start of production in Q2 2026. [1]",
+        "abstained": false,
+        "coverage": 0.869,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "91718ab5a2c4",
+            "citation": "02_management_presentation.pdf, p. 2",
+            "text": "The budget assumes EV-7 start of production in Q2 2026."
+          }
+        ]
+      },
+      {
+        "id": "q069",
+        "type": "numeric",
+        "question": "What is the size of the senior term loan B?",
+        "answer": "Facilities: Senior term loan B (Amount: CHF 132.0 million, Tenor: 7 years, Margin: SARON + 4.25%) [1]",
+        "abstained": false,
+        "coverage": 0.644,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "5542fd92afa1",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 1",
+            "text": "Facilities: Senior term loan B (Amount: CHF 132.0 million, Tenor: 7 years, Margin: SARON + 4.25%)"
+          }
+        ]
+      },
+      {
+        "id": "q070",
+        "type": "numeric",
+        "question": "How much equity does the sponsor contribute?",
+        "answer": "Sponsor equity (CHF million: 84.9) [1]",
+        "abstained": false,
+        "coverage": 0.6,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c45fd6d44ca7",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A1:A12",
+            "text": "Sponsor equity (CHF million: 84.9)"
+          }
+        ]
+      },
+      {
+        "id": "q071",
+        "type": "numeric",
+        "question": "What is the management rollover amount?",
+        "answer": "Management rollover (CHF million: 23.2) [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c45fd6d44ca7",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A1:A12",
+            "text": "Management rollover (CHF million: 23.2)"
+          }
+        ]
+      },
+      {
+        "id": "q072",
+        "type": "numeric",
+        "question": "What enterprise value does the LBO assume?",
+        "answer": "Enterprise value (CHF million: 225.9) [1]",
+        "abstained": false,
+        "coverage": 0.744,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c45fd6d44ca7",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A1:A12",
+            "text": "Enterprise value (CHF million: 225.9)"
+          }
+        ]
+      },
+      {
+        "id": "q073",
+        "type": "numeric",
+        "question": "What entry multiple does the LBO use?",
+        "answer": "Entry multiple (EV / FY2025 EBITDA) (CHF million: 9) [1]",
+        "abstained": false,
+        "coverage": 0.762,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c45fd6d44ca7",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A1:A12",
+            "text": "Entry multiple (EV / FY2025 EBITDA) (CHF million: 9)"
+          }
+        ]
+      },
+      {
+        "id": "q074",
+        "type": "numeric",
+        "question": "How much are transaction fees in the sources and uses?",
+        "answer": "Transaction fees (CHF million: 7.4) [1]",
+        "abstained": false,
+        "coverage": 0.534,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "c45fd6d44ca7",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A1:A12",
+            "text": "Transaction fees (CHF million: 7.4)"
+          }
+        ]
+      },
+      {
+        "id": "q075",
+        "type": "numeric",
+        "question": "What net debt does the model project for FY2027?",
+        "answer": "Net debt, FY2027E: 104.8 [1]",
+        "abstained": false,
+        "coverage": 0.754,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "804cee906204",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A14:A21",
+            "text": "Net debt, FY2027E: 104.8"
+          }
+        ]
+      },
+      {
+        "id": "q076",
+        "type": "numeric",
+        "question": "What interest cover does the model show for FY2026?",
+        "answer": "Interest cover, FY2026E: 3.25 [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "804cee906204",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A14:A21",
+            "text": "Interest cover, FY2026E: 3.25"
+          }
+        ]
+      },
+      {
+        "id": "q077",
+        "type": "numeric",
+        "question": "What free cash flow does the model forecast for FY2026?",
+        "answer": "Free cash flow, FY2026E: 4.6 [1]",
+        "abstained": false,
+        "coverage": 0.771,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "61256a205f7e",
+            "citation": "23_financial_model.xlsx, sheet Cash flow, rows A1:A5",
+            "text": "Free cash flow, FY2026E: 4.6"
+          }
+        ]
+      },
+      {
+        "id": "q078",
+        "type": "numeric",
+        "question": "What working-capital build does the model assume for FY2026?",
+        "answer": "Net working capital build, FY2026E: -6.7 [1]",
+        "abstained": false,
+        "coverage": 0.763,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "61256a205f7e",
+            "citation": "23_financial_model.xlsx, sheet Cash flow, rows A1:A5",
+            "text": "Net working capital build, FY2026E: -6.7"
+          }
+        ]
+      },
+      {
+        "id": "q079",
+        "type": "numeric",
+        "question": "How much revenue did Brenntal Automotive generate in FY2025?",
+        "answer": "Brenntal Automotive GmbH, Revenue CHF m: 44.4 [1]",
+        "abstained": false,
+        "coverage": 0.601,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "393af9e0b21b",
+            "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
+            "text": "Brenntal Automotive GmbH, Revenue CHF m: 44.4"
+          }
+        ]
+      },
+      {
+        "id": "q080",
+        "type": "numeric",
+        "question": "What share of FY2025 revenue came from Nordwind Rail Systems?",
+        "answer": "Nordwind Rail Systems AB, Share of revenue: 0.128 [1]",
+        "abstained": false,
+        "coverage": 0.749,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "393af9e0b21b",
+            "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
+            "text": "Nordwind Rail Systems AB, Share of revenue: 0.128"
+          }
+        ]
+      },
+      {
+        "id": "q081",
+        "type": "numeric",
+        "question": "How much revenue came from Valtrona Medical Systems in FY2025?",
+        "answer": "Valtrona Medical Systems SA, Revenue CHF m: 13.7 [1]",
+        "abstained": false,
+        "coverage": 0.7,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "393af9e0b21b",
+            "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
+            "text": "Valtrona Medical Systems SA, Revenue CHF m: 13.7"
+          }
+        ]
+      },
+      {
+        "id": "q082",
+        "type": "numeric",
+        "question": "What is total capex planned for FY2027?",
+        "answer": "Total capex, FY2027E: 11.2 [1]",
+        "abstained": false,
+        "coverage": 0.72,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "bbffa2b3a394",
+            "citation": "25_capex_plan.xlsx, sheet Capex, rows A1:A6",
+            "text": "Total capex, FY2027E: 11.2"
+          }
+        ]
+      },
+      {
+        "id": "q083",
+        "type": "numeric",
+        "question": "How much does the five-axis line cost?",
+        "answer": "A new five-axis machining line for EV-7 housings is planned for FY2027 at a cost of CHF 6.4 million. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "92dacc73263c",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "A new five-axis machining line for EV-7 housings is planned for FY2027 at a cost of CHF 6.4 million."
+          }
+        ]
+      },
+      {
+        "id": "q084",
+        "type": "numeric",
+        "question": "What maintenance capex is planned for FY2028?",
+        "answer": "Maintenance capex, FY2028E: 5.3 [1]",
+        "abstained": false,
+        "coverage": 0.745,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "bbffa2b3a394",
+            "citation": "25_capex_plan.xlsx, sheet Capex, rows A1:A6",
+            "text": "Maintenance capex, FY2028E: 5.3"
+          }
+        ]
+      },
+      {
+        "id": "q085",
+        "type": "numeric",
+        "question": "What is the product liability insurance limit?",
+        "answer": "Insurance programme: Product liability, Limit: CHF 20 million [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "7c5582b339dd",
+            "citation": "15_insurance_schedule.pdf, p. 1",
+            "text": "Insurance programme: Product liability, Limit: CHF 20 million"
+          }
+        ]
+      },
+      {
+        "id": "q086",
+        "type": "numeric",
+        "question": "What is the limit of the cyber insurance policy?",
+        "answer": "Insurance programme: Cyber, Limit: CHF 5 million [1]",
+        "abstained": false,
+        "coverage": 0.744,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "7c5582b339dd",
+            "citation": "15_insurance_schedule.pdf, p. 1",
+            "text": "Insurance programme: Cyber, Limit: CHF 5 million"
+          }
+        ]
+      },
+      {
+        "id": "q087",
+        "type": "numeric",
+        "question": "What is the size of the revolving credit facility?",
+        "answer": "Facilities: Revolving credit facility (Amount: CHF 20.0 million, Tenor: 6 years, Margin: SARON + 3.75%) [1]",
+        "abstained": false,
+        "coverage": 0.695,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "5542fd92afa1",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 1",
+            "text": "Facilities: Revolving credit facility (Amount: CHF 20.0 million, Tenor: 6 years, Margin: SARON + 3.75%)"
+          }
+        ]
+      },
+      {
+        "id": "q088",
+        "type": "cross_doc",
+        "question": "Does FY2025 revenue in the information memorandum match the audited accounts?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.334,
+        "citations": []
+      },
+      {
+        "id": "q089",
+        "type": "cross_doc",
+        "question": "Can the largest customer terminate its contract if Northgate acquires a majority stake?",
+        "answer": "14.2 If any third party acquires, directly or indirectly, more than 50% of the shares or voting rights in the Supplier without the Buyer's prior written consent, the Buyer may terminate this agreement with 90 days' written notice. [1] This Information Memorandum has been prepared on behalf of the shareholders of Alpine Precision Components AG (the Company) for a limited number of parties considering the acquisition of a majority stake. [2]",
+        "abstained": false,
+        "coverage": 0.478,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "38055639bd1f",
+            "citation": "06_customer_contract_brenntal_automotive.pdf, p. 2",
+            "text": "14.2 If any third party acquires, directly or indirectly, more than 50% of the shares or voting rights in the Supplier without the Buyer's prior written consent, the Buyer may terminate this agreement with 90 days' written notice."
+          },
+          {
+            "n": 2,
+            "chunk_id": "54d24aa8f095",
+            "citation": "01_information_memorandum.pdf, p. 1",
+            "text": "This Information Memorandum has been prepared on behalf of the shareholders of Alpine Precision Components AG (the Company) for a limited number of parties considering the acquisition of a majority stake."
+          }
+        ]
+      },
+      {
+        "id": "q090",
+        "type": "cross_doc",
+        "question": "How much headroom is there on the FY2026 net leverage covenant?",
+        "answer": "Net leverage, FY2026E: 4.38 [1] Net leverage (net debt to EBITDA) must not exceed 4.50x at 31 December 2026, 4.00x at 31 December 2027 and 3.50x at 31 December 2028 and thereafter. [2]",
+        "abstained": false,
+        "coverage": 0.546,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "804cee906204",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A14:A21",
+            "text": "Net leverage, FY2026E: 4.38"
+          },
+          {
+            "n": 2,
+            "chunk_id": "1d26fdc0e487",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 2",
+            "text": "Net leverage (net debt to EBITDA) must not exceed 4.50x at 31 December 2026, 4.00x at 31 December 2027 and 3.50x at 31 December 2028 and thereafter."
+          }
+        ]
+      },
+      {
+        "id": "q091",
+        "type": "cross_doc",
+        "question": "Has legal due diligence reviewed the change-of-control clause of the largest customer contract?",
+        "answer": "We reviewed the change-of-control provisions of the Nordwind and Valtrona agreements. [1] The Supplier shall inform Nordwind in writing within 30 days after any change of control of the Supplier. [2]",
+        "abstained": false,
+        "coverage": 0.722,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "d25c0d81b52d",
+            "citation": "11_legal_due_diligence_summary.pdf, p. 2",
+            "text": "We reviewed the change-of-control provisions of the Nordwind and Valtrona agreements."
+          },
+          {
+            "n": 2,
+            "chunk_id": "21642a149655",
+            "citation": "07_customer_contract_nordwind_rail.pdf, p. 2",
+            "text": "The Supplier shall inform Nordwind in writing within 30 days after any change of control of the Supplier."
+          }
+        ]
+      },
+      {
+        "id": "q092",
+        "type": "cross_doc",
+        "question": "Does the EV-7 start of production in the budget match the latest information from Brenntal?",
+        "answer": "Brenntal Automotive has nominated the Company as single source for the motor housing of its EV-7 electric drive platform, with start of production planned for Q2 2026. [1] The budget assumes EV-7 start of production in Q2 2026. [2]",
+        "abstained": false,
+        "coverage": 0.568,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "f4510785fc52",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "Brenntal Automotive has nominated the Company as single source for the motor housing of its EV-7 electric drive platform, with start of production planned for Q2 2026."
+          },
+          {
+            "n": 2,
+            "chunk_id": "91718ab5a2c4",
+            "citation": "02_management_presentation.pdf, p. 2",
+            "text": "The budget assumes EV-7 start of production in Q2 2026."
+          }
+        ]
+      },
+      {
+        "id": "q093",
+        "type": "cross_doc",
+        "question": "Does the bank confirmation agree with financial debt in the FY2025 balance sheet?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.442,
+        "citations": []
+      },
+      {
+        "id": "q094",
+        "type": "cross_doc",
+        "question": "Do revenues by customer add up to audited FY2025 revenue?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.446,
+        "citations": []
+      },
+      {
+        "id": "q095",
+        "type": "cross_doc",
+        "question": "Is the five-axis line cost consistent between the information memorandum and the capex plan?",
+        "answer": "Growth capex - five-axis line (FY2027E: 6.4) [1] A new five-axis machining line for EV-7 housings is planned for FY2027 at a cost of CHF 6.4 million. [2]",
+        "abstained": false,
+        "coverage": 0.493,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "bbffa2b3a394",
+            "citation": "25_capex_plan.xlsx, sheet Capex, rows A1:A6",
+            "text": "Growth capex - five-axis line (FY2027E: 6.4)"
+          },
+          {
+            "n": 2,
+            "chunk_id": "92dacc73263c",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "A new five-axis machining line for EV-7 housings is planned for FY2027 at a cost of CHF 6.4 million."
+          }
+        ]
+      },
+      {
+        "id": "q096",
+        "type": "cross_doc",
+        "question": "Is the pension liability in the HR summary consistent with the balance sheet?",
+        "answer": "Balance sheet at 31 December 2024 (CHF million): Pension liabilities (31.12.2024: 6.1) [1] Balance sheet at 31 December 2023 (CHF million): Pension liabilities (31.12.2023: 5.9) [2]",
+        "abstained": false,
+        "coverage": 0.486,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "e78706f4cf55",
+            "citation": "04_audited_financial_statements_FY2024.pdf, p. 3",
+            "text": "Balance sheet at 31 December 2024 (CHF million): Pension liabilities (31.12.2024: 6.1)"
+          },
+          {
+            "n": 2,
+            "chunk_id": "2a61398ffd28",
+            "citation": "03_audited_financial_statements_FY2023.pdf, p. 3",
+            "text": "Balance sheet at 31 December 2023 (CHF million): Pension liabilities (31.12.2023: 5.9)"
+          }
+        ]
+      },
+      {
+        "id": "q097",
+        "type": "cross_doc",
+        "question": "Does the lease addendum cap rent increases, and what is the current rent?",
+        "answer": "ADDENDUM No. 1 TO THE LEASE AGREEMENT THUN The base rent is indexed to the Swiss consumer price index once a year. [1] The annual rent is CZK 4.9 million and the lease ends on 31 December 2028. [2]",
+        "abstained": false,
+        "coverage": 0.463,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "ce9b4661d68b",
+            "citation": "28_scan_lease_addendum.pdf, p. 1",
+            "text": "ADDENDUM No. 1 TO THE LEASE AGREEMENT THUN The base rent is indexed to the Swiss consumer price index once a year."
+          },
+          {
+            "n": 2,
+            "chunk_id": "88b627b21a18",
+            "citation": "34_lease_agreement_brno_warehouse.pdf, p. 1",
+            "text": "The annual rent is CZK 4.9 million and the lease ends on 31 December 2028."
+          }
+        ]
+      },
+      {
+        "id": "q098",
+        "type": "cross_doc",
+        "question": "How much additional price reduction did Brenntal request on top of the contractual reduction?",
+        "answer": "Brenntal Automotive asked for an additional 2% price reduction from 2026. [1] From 1 January 2026 the Supplier grants the Buyer an annual productivity reduction of 2.0% on all part prices. [2]",
+        "abstained": false,
+        "coverage": 0.485,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "b8c114f8272f",
+            "citation": "19_board_minutes_q2_2025.pdf, p. 2",
+            "text": "Brenntal Automotive asked for an additional 2% price reduction from 2026."
+          },
+          {
+            "n": 2,
+            "chunk_id": "afe3ded5aa99",
+            "citation": "06_customer_contract_brenntal_automotive.pdf, p. 1",
+            "text": "From 1 January 2026 the Supplier grants the Buyer an annual productivity reduction of 2.0% on all part prices."
+          }
+        ]
+      },
+      {
+        "id": "q099",
+        "type": "cross_doc",
+        "question": "Is the FY2026 revenue in the model the same as in the budget?",
+        "answer": "Budget FY2026 versus actual FY2025 (CHF million): Revenue, FY2026 budget: 151.0 [1] Expect FY26 revenue about 4m below budget. [2]",
+        "abstained": false,
+        "coverage": 0.478,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "1c52b5d3bc8d",
+            "citation": "02_management_presentation.pdf, p. 2",
+            "text": "Budget FY2026 versus actual FY2025 (CHF million): Revenue, FY2026 budget: 151.0"
+          },
+          {
+            "n": 2,
+            "chunk_id": "6eb6077f6e83",
+            "citation": "27_scan_handwritten_board_note.pdf, p. 1",
+            "text": "Expect FY26 revenue about 4m below budget."
+          }
+        ]
+      },
+      {
+        "id": "q100",
+        "type": "ocr",
+        "question": "What annual volume does Brenntal commit to in Schedule 3?",
+        "answer": "BA-2022-0147 Schedule 3 - Annual volume commitment The Buyer commits to purchase at least 1.2 million EV-7 motor housings per contract year from 2027. [1]",
+        "abstained": false,
+        "coverage": 1.0,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "0c8738300024",
+            "citation": "26_scan_brenntal_signature_page.pdf, p. 1",
+            "text": "BA-2022-0147 Schedule 3 - Annual volume commitment The Buyer commits to purchase at least 1.2 million EV-7 motor housings per contract year from 2027."
+          }
+        ]
+      },
+      {
+        "id": "q101",
+        "type": "ocr",
+        "question": "When was the Brenntal agreement signed?",
+        "answer": "Signed in Leipzig on 4 February 2022 for Brenntal Automotive GmbH for Alpine Precision Components AG [1]",
+        "abstained": false,
+        "coverage": 0.748,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "0c8738300024",
+            "citation": "26_scan_brenntal_signature_page.pdf, p. 1",
+            "text": "Signed in Leipzig on 4 February 2022 for Brenntal Automotive GmbH for Alpine Precision Components AG"
+          }
+        ]
+      },
+      {
+        "id": "q102",
+        "type": "ocr",
+        "question": "By how much does the chair expect FY2026 revenue to fall short of budget?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.355,
+        "citations": []
+      },
+      {
+        "id": "q103",
+        "type": "ocr",
+        "question": "When was the lease addendum signed?",
+        "answer": "ADDENDUM No. 1 TO THE LEASE AGREEMENT THUN The base rent is indexed to the Swiss consumer price index once a year. [1]",
+        "abstained": false,
+        "coverage": 0.689,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "ce9b4661d68b",
+            "citation": "28_scan_lease_addendum.pdf, p. 1",
+            "text": "ADDENDUM No. 1 TO THE LEASE AGREEMENT THUN The base rent is indexed to the Swiss consumer price index once a year."
+          }
+        ]
+      },
+      {
+        "id": "q104",
+        "type": "ocr",
+        "question": "Can the existing bank loan be prepaid without penalty?",
+        "answer": "Seeland Regionalbank AG Confirmation of balances at 31 December 2025 Term loan outstanding: CHF 38.0 million The loan may be prepaid on any interest date without penalty. [1]",
+        "abstained": false,
+        "coverage": 0.847,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "a2f9e02f687d",
+            "citation": "29_scan_bank_confirmation_letter.pdf, p. 1",
+            "text": "Seeland Regionalbank AG Confirmation of balances at 31 December 2025 Term loan outstanding: CHF 38.0 million The loan may be prepaid on any interest date without penalty."
+          }
+        ]
+      },
+      {
+        "id": "q105",
+        "type": "ocr",
+        "question": "Which bank provided the balance confirmation?",
+        "answer": "Seeland Regionalbank AG Confirmation of balances at 31 December 2025 Term loan outstanding: CHF 38.0 million The loan may be prepaid on any interest date without penalty. [1]",
+        "abstained": false,
+        "coverage": 0.717,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "a2f9e02f687d",
+            "citation": "29_scan_bank_confirmation_letter.pdf, p. 1",
+            "text": "Seeland Regionalbank AG Confirmation of balances at 31 December 2025 Term loan outstanding: CHF 38.0 million The loan may be prepaid on any interest date without penalty."
+          }
+        ]
+      },
+      {
+        "id": "q106",
+        "type": "unanswerable",
+        "question": "What is the CEO's annual salary?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.352,
+        "citations": []
+      },
+      {
+        "id": "q107",
+        "type": "unanswerable",
+        "question": "What was the company's revenue in FY2019?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.234,
+        "citations": []
+      },
+      {
+        "id": "q108",
+        "type": "unanswerable",
+        "question": "How many patents does Brenntal Automotive hold?",
+        "answer": "Brenntal Automotive GmbH (Revenue CHF m: 44.4, Share of revenue: 0.312, Segment: Automotive) [1]",
+        "abstained": false,
+        "coverage": 0.52,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "393af9e0b21b",
+            "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
+            "text": "Brenntal Automotive GmbH (Revenue CHF m: 44.4, Share of revenue: 0.312, Segment: Automotive)"
+          }
+        ]
+      },
+      {
+        "id": "q109",
+        "type": "unanswerable",
+        "question": "What is the purchase price offered by competing bidders?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.226,
+        "citations": []
+      },
+      {
+        "id": "q110",
+        "type": "unanswerable",
+        "question": "What is the company's carbon footprint in tonnes of CO2?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.0,
+        "citations": []
+      },
+      {
+        "id": "q111",
+        "type": "unanswerable",
+        "question": "Which software vendor supplied the new ERP system?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.167,
+        "citations": []
+      },
+      {
+        "id": "q112",
+        "type": "unanswerable",
+        "question": "What is the Brno plant's annual energy cost?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.317,
+        "citations": []
+      },
+      {
+        "id": "q113",
+        "type": "unanswerable",
+        "question": "How many shares does the CFO own?",
+        "answer": "The Company is owned by the Hosmatter family, who intend to sell 70% of the shares and retain 30% alongside management. [1]",
+        "abstained": false,
+        "coverage": 0.588,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "54d24aa8f095",
+            "citation": "01_information_memorandum.pdf, p. 1",
+            "text": "The Company is owned by the Hosmatter family, who intend to sell 70% of the shares and retain 30% alongside management."
+          }
+        ]
+      },
+      {
+        "id": "q114",
+        "type": "unanswerable",
+        "question": "What order intake does management target for FY2027?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.393,
+        "citations": []
+      },
+      {
+        "id": "q115",
+        "type": "unanswerable",
+        "question": "What credit rating does the company have?",
+        "answer": "Lead arranger: Lakeshore Credit Partners. [1]",
+        "abstained": false,
+        "coverage": 0.535,
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "92ce2ca9b5ee",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 1",
+            "text": "Lead arranger: Lakeshore Credit Partners."
+          }
+        ]
+      },
+      {
+        "id": "q116",
+        "type": "unanswerable",
+        "question": "What is the warranty provision at 31 December 2025?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.42,
+        "citations": []
+      },
+      {
+        "id": "q117",
+        "type": "unanswerable",
+        "question": "What is the expected closing date of the transaction?",
+        "answer": "Not found in the data room.",
+        "abstained": true,
+        "coverage": 0.436,
+        "citations": []
+      }
+    ]
+  },
+  "challenger": {
+    "trap_recall": 1.0,
+    "traps": [
+      {
+        "trap": "revenue_mismatch",
+        "title": "FY2025 revenue in the IM does not match the audited accounts",
+        "found": true,
+        "found_partial": true,
+        "argument": "FY2025 revenue in information memorandum does not match the audited accounts"
+      },
+      {
+        "trap": "change_of_control",
+        "title": "Largest customer can terminate on change of control",
+        "found": true,
+        "found_partial": true,
+        "argument": "Brenntal Automotive GmbH can terminate on change of control"
+      },
+      {
+        "trap": "covenant_headroom",
+        "title": "Net leverage covenant close to breach in FY2026",
+        "found": true,
+        "found_partial": true,
+        "argument": "FY2026 net leverage covenant headroom is thin"
+      }
+    ],
+    "argument_citation_precision": 0.8823529411764706,
+    "arguments": [
+      {
+        "check": "figure_consistency",
+        "title": "FY2025 revenue in information memorandum does not match the audited accounts",
+        "severity": "high",
+        "text": "The marketing document states FY2025 revenue of CHF 148.6 million [1], but the audited accounts show CHF 142.3 million [2], a gap of CHF 6.3 million (+4.4%). No reconciliation was found in the data room; valuation and leverage must be based on the audited figure.",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "e632459ff51c",
+            "citation": "01_information_memorandum.pdf, p. 1",
+            "text": "Revenue reached CHF 148.6 million in FY2025, up from CHF 131.0 million in FY2024, with adjusted EBITDA of CHF 26.8 million."
+          },
+          {
+            "n": 2,
+            "chunk_id": "d96aaced9d25",
+            "citation": "05_audited_financial_statements_FY2025.pdf, p. 2",
+            "text": "Net revenue, FY2025: 142.3"
+          }
+        ]
+      },
+      {
+        "check": "change_of_control",
+        "title": "Brenntal Automotive GmbH can terminate on change of control",
+        "severity": "high",
+        "text": "Brenntal Automotive GmbH can terminate its agreement if a third party acquires control without its consent [1]. It accounts for 31.2% of FY2025 revenue [2], so the acquisition itself puts that revenue at risk unless consent is obtained before signing. Legal due diligence has not reviewed this agreement [3].",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "38055639bd1f",
+            "citation": "06_customer_contract_brenntal_automotive.pdf, p. 2",
+            "text": "14.2 If any third party acquires, directly or indirectly, more than 50% of the shares or voting rights in the Supplier without the Buyer's prior written consent, the Buyer may terminate this agreement with 90 days' written notice."
+          },
+          {
+            "n": 2,
+            "chunk_id": "393af9e0b21b",
+            "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
+            "text": "Brenntal Automotive GmbH: 31.2% of FY2025 revenue"
+          },
+          {
+            "n": 3,
+            "chunk_id": "d25c0d81b52d",
+            "citation": "11_legal_due_diligence_summary.pdf, p. 2",
+            "text": "The Brenntal agreement was provided late and has not yet been reviewed."
+          }
+        ]
+      },
+      {
+        "check": "covenant_headroom",
+        "title": "FY2026 net leverage covenant headroom is thin",
+        "severity": "high",
+        "text": "The model projects net leverage of 4.38x at the end of FY2026 [1] against a covenant maximum of 4.50x [2], a headroom of 2.7%. A revenue shortfall of CHF 4.0 million [3] at the plan EBITDA margin of 17.4% would lift leverage to 4.50x with net debt unchanged, at or above the covenant.",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "804cee906204",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A14:A21",
+            "text": "Net leverage, FY2026E: 4.38"
+          },
+          {
+            "n": 2,
+            "chunk_id": "1d26fdc0e487",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 2",
+            "text": "Net leverage (net debt to EBITDA) must not exceed 4.50x at 31 December 2026, 4.00x at 31 December 2027 and 3.50x at 31 December 2028 and thereafter."
+          },
+          {
+            "n": 3,
+            "chunk_id": "6eb6077f6e83",
+            "citation": "27_scan_handwritten_board_note.pdf, p. 1",
+            "text": "Expect FY26 revenue about 4m below budget."
+          }
+        ]
+      },
+      {
+        "check": "covenant_headroom",
+        "title": "FY2027 net leverage covenant headroom is thin",
+        "severity": "high",
+        "text": "The model projects net leverage of 3.69x at the end of FY2027 [1] against a covenant maximum of 4.00x [2], a headroom of 7.8%. A revenue shortfall of CHF 4.0 million [3] at the plan EBITDA margin of 17.7% would lift leverage to 3.78x with net debt unchanged.",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "804cee906204",
+            "citation": "23_financial_model.xlsx, sheet LBO, rows A14:A21",
+            "text": "Net leverage, FY2027E: 3.69"
+          },
+          {
+            "n": 2,
+            "chunk_id": "1d26fdc0e487",
+            "citation": "20_senior_facilities_term_sheet.pdf, p. 2",
+            "text": "Net leverage (net debt to EBITDA) must not exceed 4.50x at 31 December 2026, 4.00x at 31 December 2027 and 3.50x at 31 December 2028 and thereafter."
+          },
+          {
+            "n": 3,
+            "chunk_id": "6eb6077f6e83",
+            "citation": "27_scan_handwritten_board_note.pdf, p. 1",
+            "text": "Expect FY26 revenue about 4m below budget."
+          }
+        ]
+      },
+      {
+        "check": "timeline_consistency",
+        "title": "EV-7 start of production: Q2 2026 in the plan, Q1 2027 in the latest note",
+        "severity": "high",
+        "text": "The information memorandum and the budget assume start of production in Q2 2026 [1], [2]. A later handwritten note records that it moved to Q1 2027 and that revenue will fall below budget [3]. The plan used for valuation and for the covenant test should be restated.",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "f4510785fc52",
+            "citation": "01_information_memorandum.pdf, p. 3",
+            "text": "Brenntal Automotive has nominated the Company as single source for the motor housing of its EV-7 electric drive platform, with start of production planned for Q2 2026."
+          },
+          {
+            "n": 2,
+            "chunk_id": "91718ab5a2c4",
+            "citation": "02_management_presentation.pdf, p. 2",
+            "text": "The budget assumes EV-7 start of production in Q2 2026."
+          },
+          {
+            "n": 3,
+            "chunk_id": "6eb6077f6e83",
+            "citation": "27_scan_handwritten_board_note.pdf, p. 1",
+            "text": "EV-7 start Of production moved from Q2 2026 to Q1 2027."
+          }
+        ]
+      },
+      {
+        "check": "adjusted_earnings",
+        "title": "Adjusted EBITDA has no bridge to reported EBITDA",
+        "severity": "medium",
+        "text": "The information memorandum quotes adjusted EBITDA [1] but the data room contains no bridge from reported to adjusted EBITDA. The entry multiple should be applied to reported EBITDA until each adjustment is evidenced.",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "e632459ff51c",
+            "citation": "01_information_memorandum.pdf, p. 1",
+            "text": "Revenue reached CHF 148.6 million in FY2025, up from CHF 131.0 million in FY2024, with adjusted EBITDA of CHF 26.8 million."
+          }
+        ]
+      },
+      {
+        "check": "concentration",
+        "title": "Brenntal Automotive GmbH is 31% of revenue",
+        "severity": "medium",
+        "text": "The largest customer, Brenntal Automotive GmbH, accounts for 31.2% of FY2025 revenue [1].",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "393af9e0b21b",
+            "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
+            "text": "Brenntal Automotive GmbH: 31.2% of FY2025 revenue"
+          }
+        ]
+      },
+      {
+        "check": "change_of_control",
+        "title": "Existing bank loan is repayable on change of control",
+        "severity": "low",
+        "text": "The existing term loan becomes repayable on a change of control [1]. It is refinanced at closing in the sources and uses, so this is a timing item, not a value item.",
+        "citations": [
+          {
+            "n": 1,
+            "chunk_id": "89da68491b99",
+            "citation": "37_existing_facility_agreement_2019.pdf, p. 2",
+            "text": "The loan becomes repayable on a change of control of the borrower."
+          }
+        ]
+      }
+    ]
+  },
+  "ingestion": {
+    "ocr_character_accuracy": {
+      "26_scan_brenntal_signature_page.pdf": 1.0,
+      "27_scan_handwritten_board_note.pdf": 0.9948453608247423,
+      "28_scan_lease_addendum.pdf": 1.0,
+      "29_scan_bank_confirmation_letter.pdf": 1.0
+    },
+    "ocr_mean": 0.9987113402061856,
+    "pii_strings": 10,
+    "pii_leaked_into_index": [],
+    "pdfs_with_pii": 5,
+    "pii_left_in_redacted_pdfs": []
+  }
+}

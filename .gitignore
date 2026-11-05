@@ -1,0 +1,29 @@
+# generated locally
+.cache/
+reports/demo_memo.md
+reports/ic_memo_*.md
+*.egg-info/
+__pycache__/
+.coverage
+coverage.xml
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# web
+web/node_modules/
+web/.next/
+web/test-results/
+web/playwright-report/
+web/next-env.d.ts
+
+# infra
+infra/terraform/.terraform/
+infra/terraform/*.tfstate*
+infra/terraform/*.tfvars
+!infra/terraform/example.tfvars
+
+# secrets never belong here
+*.pem
+*.key
+.env

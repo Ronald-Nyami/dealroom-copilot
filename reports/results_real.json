@@ -1,0 +1,1917 @@
+{
+ "llm": "stub",
+ "financebench": {
+  "questions": 150,
+  "filings": 84,
+  "retrieval": {
+   "bm25": {
+    "page_hit@1": 0.22,
+    "page_hit@5": 0.3933333333333333,
+    "page_hit@10": 0.5333333333333333
+   },
+   "dense": {
+    "page_hit@1": 0.18666666666666668,
+    "page_hit@5": 0.36666666666666664,
+    "page_hit@10": 0.44
+   },
+   "hybrid": {
+    "page_hit@1": 0.22666666666666666,
+    "page_hit@5": 0.4066666666666667,
+    "page_hit@10": 0.49333333333333335
+   },
+   "hybrid_rerank": {
+    "page_hit@1": 0.18,
+    "page_hit@5": 0.4266666666666667,
+    "page_hit@10": 0.52
+   }
+  },
+  "page_hit@5_by_type": {
+   "domain-relevant": 0.26,
+   "metrics-generated": 0.4,
+   "novel-generated": 0.62
+  },
+  "figure_accuracy_by_type": {
+   "domain-relevant": {
+    "accuracy": 0.0,
+    "questions": 1
+   },
+   "metrics-generated": {
+    "accuracy": 0.0,
+    "questions": 50
+   },
+   "novel-generated": {
+    "accuracy": 0.0,
+    "questions": 1
+   }
+  },
+  "abstained": 133,
+  "answers": [
+   {
+    "id": "financebench_id_03029",
+    "type": "metrics-generated",
+    "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+    "gold": "$1577.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04672",
+    "type": "metrics-generated",
+    "question": "Assume that you are a public equities analyst. Answer the following question by primarily using information that is shown in the balance sheet: what is the year end FY2018 net PPNE for 3M? Answer in USD billions.",
+    "gold": "$8.70",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00499",
+    "type": "domain-relevant",
+    "question": "Is 3M a capital-intensive business based on FY2022 data?",
+    "gold": "No, the company is managing its CAPEX and Fixed Assets pretty efficiently, which is evident from below key metrics:\nCAPEX/Revenue Ratio: 5.1%\nFixed assets/Total Assets: 20%\nReturn on Assets= 12.4%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01226",
+    "type": "domain-relevant",
+    "question": "What drove operating margin change as of FY2022 for 3M? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+    "gold": "Operating Margin for 3M in FY2022 has decreased by 1.7% primarily due to: \n-Decrease in gross Margin\n-mostly one-off charges including Combat Arms Earplugs litigation, impairment related to exiting PFAS manufacturing, costs related to exiting Russia and divestiture-related restructuring\ncharges",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01865",
+    "type": "novel-generated",
+    "question": "If we exclude the impact of M&A, which segment has dragged down 3M's overall growth in 2022?",
+    "gold": "The consumer segment shrunk by 0.9% organically.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00807",
+    "type": "domain-relevant",
+    "question": "Does 3M have a reasonably healthy liquidity profile based on its quick ratio for Q2 of FY2023? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+    "gold": "No. The quick ratio for 3M was 0.96 by Jun'23 close, which needs a bit of an improvement to touch the 1x mark",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00941",
+    "type": "domain-relevant",
+    "question": "Which debt securities are registered to trade on a national securities exchange under 3M's name as of Q2 of 2023?",
+    "gold": "Following debt securities registered under 3M's name are listed to trade on the New York Stock Exchange:\n-1.500% Notes due 2026 (Trading Symbol: MMM26)\n-1.750% Notes due 2030 (Trading Symbol: MMM30)\n-1.500% Notes due 2031 (Trading Symbol: MMM31)",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01858",
+    "type": "novel-generated",
+    "question": "Does 3M maintain a stable trend of dividend distribution?",
+    "gold": "Yes, not only they distribute the dividends on a routine basis, 3M has also been increasing the per share dividend for consecutive 65 years",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_02987",
+    "type": "metrics-generated",
+    "question": "What is the FY2019 fixed asset turnover ratio for Activision Blizzard? Fixed asset turnover ratio is defined as: FY2019 revenue / (average PP&E between FY2018 and FY2019). Round your answer to two decimal places. Base your judgments on the information provided primarily in the statement of income and the statement of financial position.",
+    "gold": "24.26",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_07966",
+    "type": "metrics-generated",
+    "question": "What is the FY2017 - FY2019 3 year average of capex as a % of revenue for Activision Blizzard? Answer in units of percents and round to one decimal place. Calculate (or extract) the answer from the statement of income and the cash flow statement.",
+    "gold": "1.9%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04735",
+    "type": "metrics-generated",
+    "question": "You are an investment banker and your only resource(s) to answer the following question is (are): the statement of financial position and the cash flow statement. Here's the question: what is the FY2015 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places.",
+    "gold": "0.66",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_07507",
+    "type": "metrics-generated",
+    "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+    "gold": "65.4%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03856",
+    "type": "metrics-generated",
+    "question": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement.",
+    "gold": "0.83",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00438",
+    "type": "domain-relevant",
+    "question": "Does Adobe have an improving operating margin profile as of FY2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+    "gold": "No the operating margins of Adobe have recently declined from 36.8% in FY 2021 to 34.6% in FY2022. A drop by 2.2% in a year.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00591",
+    "type": "novel-generated",
+    "question": "Does Adobe have an improving Free cashflow conversion as of FY2022?",
+    "gold": "Yes, the FCF conversion (using net income as the denominator) for Adobe has improved by ~13% from 143% in 2021 to 156% in 2022",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01319",
+    "type": "domain-relevant",
+    "question": "What is the quantity of restructuring costs directly outlined in AES Corporation's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+    "gold": "0",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00540",
+    "type": "domain-relevant",
+    "question": "Roughly how many times has AES Corporation sold its inventory in FY2022? Calculate inventory turnover ratio for the FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+    "gold": "AES has converted inventory 9.5 times in FY 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_10420",
+    "type": "metrics-generated",
+    "question": "Based on the information provided primarily in the statement of financial position and the statement of income, what is AES's FY2022 return on assets (ROA)? ROA is defined as: FY2022 net income / (average total assets between FY2021 and FY2022). Round your answer to two decimal places.",
+    "gold": "-0.02",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_06655",
+    "type": "metrics-generated",
+    "question": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+    "gold": "93.86",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_08135",
+    "type": "metrics-generated",
+    "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+    "gold": "30.8%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_08286",
+    "type": "metrics-generated",
+    "question": "By drawing conclusions from the information stated only in the income statement, what is Amazon's FY2019 net income attributable to shareholders (in USD millions)?",
+    "gold": "$11588.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03882",
+    "type": "metrics-generated",
+    "question": "What is Amcor's year end FY2020 net AR (in USD millions)? Address the question by adopting the perspective of a financial analyst who can only use the details shown within the balance sheet.",
+    "gold": "$1616.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01935",
+    "type": "novel-generated",
+    "question": "What was the key agenda of the AMCOR's 8k filing dated 1st July 2022?",
+    "gold": "Amcor Finance (USA), Inc. and Amcor Flexibles North America, Inc., entered into supplemental indentures relating to Guaranteed Senior Notes due 2026 and 2028. This involved the substitution of the Substitute Issuer (Amcor Flexibles North America) for the Former Issuer (Amcor Finance) and the assumption of covenants under the indentures. (In essence a novation agreement)",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01936",
+    "type": "novel-generated",
+    "question": "What is the nature & purpose of AMCOR's restructuring liability as oF Q2 of FY2023 close?",
+    "gold": "87% of the total restructuring liability is related Employee liabilities.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01928",
+    "type": "novel-generated",
+    "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+    "gold": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+    "answer": "Adjusted non-GAAP results 2022 $ million 2023 $ million Reported ∆% currency ∆% Net sales 14,544 14,694 1 —. [1]",
+    "abstained": false,
+    "citations": [
+     "AMCOR_2023Q4_EARNINGS.pdf, p. 1"
+    ]
+   },
+   {
+    "id": "financebench_id_01930",
+    "type": "novel-generated",
+    "question": "How much was the Real change in Sales for AMCOR in FY 2023 vs FY 2022, if we exclude the impact of FX movement, passthrough costs and one-off items?",
+    "gold": "The Real Growth was flat in FY 2023 vs FY 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00799",
+    "type": "domain-relevant",
+    "question": "Has AMCOR's quick ratio improved or declined between FY2023 and FY2022? If the quick ratio is not something that a financial analyst would ask about a company like this, then state that and explain why.",
+    "gold": "The quick ratio has slightly improved from 0.67 times to 0.69 times between FY 2023 and FY 2022.(3.4% jump)",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01079",
+    "type": "domain-relevant",
+    "question": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?",
+    "gold": "Amcor completed these acquisitions during FY2023:\n-100% equity interest of a flexibles manufacturing company in the Czech Republic\n- 100% equity interest in a medical device packaging manufacturing site in\nShanghai, China.\n-acquisition of a New Zealand-based leading manufacturer of state-of-the-art, automated protein\npackaging machines.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01148",
+    "type": "domain-relevant",
+    "question": "What industry does AMCOR primarily operate in?",
+    "gold": "Amcor is a global leader in packaging production for various use cases.",
+    "answer": "Competition — We face significant competition in the industries and regions in which we operate, which could adversely affect our business.. [1]",
+    "abstained": false,
+    "citations": [
+     "AMCOR_2023_10K.pdf, p. 14"
+    ]
+   },
+   {
+    "id": "financebench_id_00684",
+    "type": "domain-relevant",
+    "question": "Does AMCOR have an improving gross margin profile as of FY2023? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+    "gold": "No. For AMCOR there has been a slight decline in gross margins by 0.8%.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03069",
+    "type": "metrics-generated",
+    "question": "Answer the following question as if you are an equity research analyst and have lost internet connection so you do not have access to financial metric providers. According to the details clearly outlined within the P&L statement and the statement of cash flows, what is the FY2015 depreciation and amortization (D&A from cash flow statement) % margin for AMD?",
+    "gold": "4.2%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00222",
+    "type": "domain-relevant",
+    "question": "Does AMD have a reasonably healthy liquidity profile based on its quick ratio for FY22? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+    "gold": "Yes. The quick ratio is 1.57, calculated as (cash and cash equivalents+Short term investments+Accounts receivable, net+receivables from related parties)/ (current liabilities).",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00995",
+    "type": "domain-relevant",
+    "question": "What are the major products and services that AMD sells as of FY22?",
+    "gold": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01198",
+    "type": "domain-relevant",
+    "question": "What drove revenue change as of the FY22 for AMD?",
+    "gold": "In 2022, AMD reported Higher sales of their EPYC server processors, higher semi-custom product sales, and the inclusion of Xilinx embedded product sales",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00917",
+    "type": "domain-relevant",
+    "question": "What drove operating margin change as of the FY22 for AMD? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+    "gold": "The decrease in AMD's operating income was primarily driven by amortization of intangible assets associated with the Xilinx acquisition",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01279",
+    "type": "domain-relevant",
+    "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+    "gold": "In 2022, AMD brought in the most cashflow from Operations",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00563",
+    "type": "novel-generated",
+    "question": "From FY21 to FY22, excluding Embedded, in which AMD reporting segment did sales proportionally increase the most?",
+    "gold": "Data Center",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00757",
+    "type": "novel-generated",
+    "question": "Did AMD report customer concentration in FY22?",
+    "gold": "Yes, one customer accounted for 16% of consolidated net revenue",
+    "answer": "The Company believes that concentrations of credit risk with respect to trade receivables are limited because a large number of geographically diverse. customers make up the Company’s customer base, thus diluting the trade credit risk. [1]",
+    "abstained": false,
+    "citations": [
+     "AMD_2022_10K.pdf, p. 80"
+    ]
+   },
+   {
+    "id": "financebench_id_00476",
+    "type": "domain-relevant",
+    "question": "Which debt securities are registered to trade on a national securities exchange under American Express' name as of 2022?",
+    "gold": "There are none",
+    "answer": "Title of each class Trading Symbol(s) Name of each exchange on which registered. [1]",
+    "abstained": false,
+    "citations": [
+     "AMERICANEXPRESS_2022_10K.pdf, p. 1"
+    ]
+   },
+   {
+    "id": "financebench_id_01028",
+    "type": "domain-relevant",
+    "question": "What are the geographies that American Express primarily operates in as of 2022?",
+    "gold": "United States, EMEA, APAC, and LACC",
+    "answer": "We operate a payments network through which we establish and maintain relationships with third-party banks and other institutions in approximately 103. countries and territories, licensing the American Express brand and extending the reach of our global network. [1]",
+    "abstained": false,
+    "citations": [
+     "AMERICANEXPRESS_2022_10K.pdf, p. 6"
+    ]
+   },
+   {
+    "id": "financebench_id_00723",
+    "type": "domain-relevant",
+    "question": "Does AMEX have an improving operating margin profile as of 2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+    "gold": "Performance is not measured through operating margin",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00720",
+    "type": "domain-relevant",
+    "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+    "gold": "Performance is not measured through gross margin",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01351",
+    "type": "domain-relevant",
+    "question": "How much has the effective tax rate of American Express changed between FY2021 and FY2022?",
+    "gold": "The effective tax rate for American Express has changed/dropped from 24.6% in FY 2021 to 21.6% in FY 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01964",
+    "type": "novel-generated",
+    "question": "What was the largest liability in American Express's Balance Sheet in 2022?",
+    "gold": "Customer deposits",
+    "answer": "We have audited the accompanying consolidated balance sheets of American Express Company and its subsidiaries (the “Company”) as of December 31, 2022. and 2021, and the related consolidated statements of income, of comprehensive income, of shareholders’ equity and of cash flows for each of the three years in. the period ended December 31, 2022, including the related notes (collectively referred to as the “consolidated financial statements”). [1]",
+    "abstained": false,
+    "citations": [
+     "AMERICANEXPRESS_2022_10K.pdf, p. 92"
+    ]
+   },
+   {
+    "id": "financebench_id_01981",
+    "type": "novel-generated",
+    "question": "Was American Express able to retain card members during 2022?",
+    "gold": "Yes",
+    "answer": "Discount revenue — Discount revenue represents the amount we earn and retain from the merchant payable for facilitating transactions between Card Members. and merchants on payment products issued by American Express.. [1]",
+    "abstained": false,
+    "citations": [
+     "AMERICANEXPRESS_2022_10K.pdf, p. 86"
+    ]
+   },
+   {
+    "id": "financebench_id_05718",
+    "type": "metrics-generated",
+    "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+    "gold": "$0.40",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04254",
+    "type": "metrics-generated",
+    "question": "Basing your judgments off of the cash flow statement and the income statement, what is American Water Works's FY2021 unadjusted operating income + depreciation and amortization from the cash flow statement (unadjusted EBITDA) in USD millions?",
+    "gold": "$1832.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00070",
+    "type": "domain-relevant",
+    "question": "Does American Water Works have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+    "gold": "No, American Water Works had negative working capital of -$1561M in FY 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_02608",
+    "type": "metrics-generated",
+    "question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+    "gold": "2.8%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04417",
+    "type": "metrics-generated",
+    "question": "What is the year end FY2019 total amount of inventories for Best Buy? Answer in USD millions. Base your judgments on the information provided primarily in the balance sheet.",
+    "gold": "$5409.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00685",
+    "type": "domain-relevant",
+    "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+    "gold": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01077",
+    "type": "domain-relevant",
+    "question": "What are major acquisitions that Best Buy has done in FY2023, FY2022 and FY2021?",
+    "gold": "Best Buy closed two acquisitions, both these companies were already partially owned by Best Buy, but Best Buy acquired all outstanding shares of these two companies during FY 2022: (1) Current Health Ltd and (2) Two Peaks, LLC d/b/a Yardbird Furniture",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01275",
+    "type": "domain-relevant",
+    "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Best Buy in FY2023?",
+    "gold": "Best Buy generated the most cash flow from operating activities in FY 2023 ($1.8 bn)",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00288",
+    "type": "novel-generated",
+    "question": "Was there any drop in Cash & Cash equivalents between FY 2023 and Q2 of FY2024?",
+    "gold": "Yes, there was a decline of ~42% between FY2023 and Q2 of FY 2024.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00460",
+    "type": "novel-generated",
+    "question": "Was there any change in the number of Best Buy stores between Q2 of FY2024 and FY2023?",
+    "gold": "Yes, there is decline in number stores by 1.32% from 982 stores in Q2 FY 2023 to 969 by the end of Q2 FY2024.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01902",
+    "type": "novel-generated",
+    "question": "Which Best Buy product category performed the best (by top line) in the domestic (USA) Market during Q2 of FY2024?",
+    "gold": "The entertainment segment experienced the highest growth of 9% during Q2 FY2024, primarily from gaming division.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04660",
+    "type": "metrics-generated",
+    "question": "Considering the data in the balance sheet, what is Block's (formerly known as Square) FY2016 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+    "gold": "1.73",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03838",
+    "type": "metrics-generated",
+    "question": "What is the FY2019 - FY2020 total revenue growth rate for Block (formerly known as Square)? Answer in units of percents and round to one decimal place. Approach the question asked by assuming the standpoint of an investment banking analyst who only has access to the statement of income.",
+    "gold": "101.5%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_07661",
+    "type": "metrics-generated",
+    "question": "Using the cash flow statement, answer the following question to the best of your abilities: how much did Block (formerly known as Square) generate in cash flow from operating activities in FY2020? Answer in USD millions.",
+    "gold": "$382.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_10285",
+    "type": "metrics-generated",
+    "question": "We need to calculate a financial metric by using information only provided within the balance sheet. Please answer the following question: what is Boeing's year end FY2018 net property, plant, and equipment (in USD millions)?",
+    "gold": "$12645.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00517",
+    "type": "domain-relevant",
+    "question": "Are there any product categories / service categories that represent more than 20% of Boeing's revenue for FY2022?",
+    "gold": "Yes. Boeing has product and service categories that represent more than 20% of Boeing's revenue for FY2022. These categories are Commercial Airplanes which comprises 39% of total revenue, Defence which comprises 35% of total revenue and Services which comprises 26% of total revenue.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01091",
+    "type": "domain-relevant",
+    "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+    "gold": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00678",
+    "type": "domain-relevant",
+    "question": "Does Boeing have an improving gross margin profile as of FY2022? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+    "gold": "Yes. Boeing has an improving gross margin profile as of FY2022. Gross profit improved from $3,017 million in FY2021 to $3,502 million in FY2022. Gross margin % improved from 4.8% in FY2021 to 5.3% in FY2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01290",
+    "type": "domain-relevant",
+    "question": "Who are the primary customers of Boeing as of FY2022?",
+    "gold": "Boeing's primary customers as of FY2022 are a limited number of commercial airlines and the US government. The US government accounted for 40% of Boeing's total revenues in FY2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00464",
+    "type": "novel-generated",
+    "question": "Is Boeing's business subject to cyclicality?",
+    "gold": "Yes, Boeing's business is subject to cyclicality due to its exposure to the airline industry which is a cyclical industry.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00494",
+    "type": "novel-generated",
+    "question": "What production rate changes is Boeing forecasting for FY2023?",
+    "gold": "Boeing forecasts an increase in the production rates for the 737, 777X and 787 aircrafts in 2023.",
+    "answer": "The FY23 appropriations support F/A-18 production further into calendar year 2025. [1]",
+    "abstained": false,
+    "citations": [
+     "BOEING_2022_10K.pdf, p. 37"
+    ]
+   },
+   {
+    "id": "financebench_id_00585",
+    "type": "novel-generated",
+    "question": "How does Boeing's effective tax rate in FY2022 compare to FY2021?",
+    "gold": "Effective tax rate in FY2022 was 0.62%, compared to  -14.76% in FY2021.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03473",
+    "type": "metrics-generated",
+    "question": "What is the FY2017 return on assets (ROA) for Coca Cola? ROA is defined as: FY2017 net income / (average total assets between FY2016 and FY2017). Round your answer to two decimal places. Give a response to the question by relying on the details shown in the balance sheet and the P&L statement.",
+    "gold": "0.01",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_09724",
+    "type": "metrics-generated",
+    "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+    "gold": "39.7%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_06272",
+    "type": "metrics-generated",
+    "question": "What is Coca Cola's FY2022 dividend payout ratio (using total cash dividends paid and net income attributable to shareholders)? Round answer to two decimal places. Answer the question asked by assuming you only have access to information clearly displayed in the cash flow statement and the income statement.",
+    "gold": "0.8",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_10130",
+    "type": "metrics-generated",
+    "question": "Based on the information provided primarily in the balance sheet and the statement of income, what is FY2020 days payable outstanding (DPO) for Corning? DPO is defined as: 365 * (average accounts payable between FY2019 and FY2020) / (FY2020 COGS + change in inventory between FY2019 and FY2020). Round your answer to two decimal places.",
+    "gold": "63.86",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_02981",
+    "type": "metrics-generated",
+    "question": "Taking into account the information outlined in the income statement, what is the FY2019 - FY2021 3 year average unadjusted operating income % margin for Corning? Answer in units of percents and round to one decimal place.",
+    "gold": "10.3%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01346",
+    "type": "domain-relevant",
+    "question": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+    "gold": "The effective tax rate of Corning has changed from 20% in FY2021 to 23% in FY 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00005",
+    "type": "domain-relevant",
+    "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+    "gold": "Yes. Corning had a positive working capital amount of $831 million by FY 2022 close. This answer considers only operating current assets and current liabilities that were clearly shown in the balance sheet.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04209",
+    "type": "metrics-generated",
+    "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+    "gold": "$59268.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_05915",
+    "type": "metrics-generated",
+    "question": "What is the FY2018 fixed asset turnover ratio for CVS Health? Fixed asset turnover ratio is defined as: FY2018 revenue / (average PP&E between FY2017 and FY2018). Round your answer to two decimal places. Calculate what was asked by utilizing the line items clearly shown in the P&L statement and the balance sheet.",
+    "gold": "17.98",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00790",
+    "type": "domain-relevant",
+    "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+    "gold": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01107",
+    "type": "domain-relevant",
+    "question": "Has CVS Health reported any materially important ongoing legal battles from 2022, 2021 and 2020?",
+    "gold": "Yes, CVS Health has been involved in multiple ongoing legal battles. Some notable legal dispute areas for CVS are: (1) usual and customary pricing litigation: where it's claimed that CVSâs retail pharmacies overcharged for prescription drugs; (2) PBM litigation and investigations: where it's claimed that that rebate agreements between the drug manufacturers and PBMs caused inflated prices for certain drug products; and (3) controlled substances litigation: legal matters around opioids for which CVS has agreed to pay up to $4.3 billion to claimants in remediation and $625 million to attorneys and fees",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01244",
+    "type": "domain-relevant",
+    "question": "Has CVS Health paid dividends to common shareholders in Q2 of FY2022?",
+    "gold": "Yes, CVS paid a $ 0.55 dividend per share every quarter in FY2022",
+    "answer": "The following graph compares the cumulative total shareholder return on CVS Health Corporation’s common stock (assuming reinvestment of dividends) with. the cumulative total return on the S&P 500 Index, the S&P 500 Food and Staples Retailing Industry Group Index and the S&P 500 Healthcare Sector Group. [1]",
+    "abstained": false,
+    "citations": [
+     "CVSHEALTH_2022_10K.pdf, p. 70"
+    ]
+   },
+   {
+    "id": "financebench_id_00822",
+    "type": "novel-generated",
+    "question": "Were there any board member nominees who had substantially more votes against joining than the other nominees?",
+    "gold": "Yes, his name is Richard A. Johnson",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00839",
+    "type": "novel-generated",
+    "question": "Does Foot Locker's new CEO have previous CEO experience in a similar company to Footlocker?",
+    "gold": "Yes. She was previous CEO of Ulta Beauty which means she had to manage a large retail company that has brick and mortar + online business. So yes she was a CEO in a similar company to Foot Locker before this.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04103",
+    "type": "metrics-generated",
+    "question": "What is the FY2019 cash conversion cycle (CCC) for General Mills? CCC is defined as: DIO + DSO - DPO. DIO is defined as: 365 * (average inventory between FY2018 and FY2019) / (FY2019 COGS). DSO is defined as: 365 * (average accounts receivable between FY2018 and FY2019) / (FY2019 Revenue). DPO is defined as: 365 * (average accounts payable between FY2018 and FY2019) / (FY2019 COGS + change in inventory between FY2018 and FY2019). Round your answer to two decimal places. Address the question by using the line items and information shown within the income statement and the balance sheet.",
+    "gold": "-3.7",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03471",
+    "type": "metrics-generated",
+    "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+    "gold": "0.68",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04854",
+    "type": "metrics-generated",
+    "question": "According to the information provided in the statement of cash flows, what is the FY2020 free cash flow (FCF) for General Mills? FCF here is defined as: (cash from operations - capex). Answer in USD millions.",
+    "gold": "$3215.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_10136",
+    "type": "metrics-generated",
+    "question": "We want to calculate a financial metric. Please help us compute it by basing your answers off of the cash flow statement and the income statement. Here's the question: what is the FY2022 retention ratio (using total cash dividends paid and net income attributable to shareholders) for General Mills? Round answer to two decimal places.",
+    "gold": "0.54",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00651",
+    "type": "novel-generated",
+    "question": "Is growth in JnJ's adjusted EPS expected to accelerate in FY2023?",
+    "gold": "No, rate of growth in adjusted EPS is expected to decelerate slightly from 3.6% in FY2022 to 3.5% in FY2023.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01484",
+    "type": "novel-generated",
+    "question": "How did JnJ's US sales growth compare to international sales growth in FY2022?",
+    "gold": "US sales increased 3.0% vs international sales decline of 0.6%.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00956",
+    "type": "domain-relevant",
+    "question": "Are JnJ's FY2022 financials that of a high growth company?",
+    "gold": "No, JnJ's FY2022 financials are not of a high growth company as sales grew by 1.3% in FY2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00669",
+    "type": "domain-relevant",
+    "question": "What drove gross margin change as of FY2022 for JnJ? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+    "gold": "For FY22, JnJ had changes in gross margin due to: One-time COVID-19 vaccine manufacturing exit related costs, Currency impacts in the Pharmaceutical segment, Commodity inflation in the MedTech and Consumer Health segments, partially offset by Supply chain benefits in the Consumer Health segment.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00711",
+    "type": "domain-relevant",
+    "question": "Roughly how many times has JnJ sold its inventory in FY2022? Calculate inventory turnover ratio for FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+    "gold": "JnJ sold its inventory 2.7 times in FY2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01487",
+    "type": "novel-generated",
+    "question": "Did JnJ's net earnings as a percent of sales increase in Q2 of FY2023 compared to Q2 of FY2022?",
+    "gold": "Yes, net earnings as a percent of sales increased from 20% in Q2 of FY2022 to 20.1% in Q2 of FY2023.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01488",
+    "type": "novel-generated",
+    "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+    "gold": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01490",
+    "type": "novel-generated",
+    "question": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?",
+    "gold": "JnJ will make a gain of approximately $20 billion from the separation of its Consumer Health business segment.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01491",
+    "type": "novel-generated",
+    "question": "What is the amount of the cash proceeds that JnJ realised from the separation of Kenvue (formerly Consumer Health business segment), as of August 30, 2023?",
+    "gold": "JnJ realised $13.2 billion in cash proceeds from the separation of Kenvue.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00299",
+    "type": "novel-generated",
+    "question": "Which of JPM's business segments had the lowest net revenue in 2021 Q1?",
+    "gold": "Corporate. Its net revenue was -$473 million.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_02119",
+    "type": "novel-generated",
+    "question": "If JPM went bankrupted by the end by 2021 Q1 and liquidated all of its assets to pay its shareholders, how much could each shareholder get?",
+    "gold": "They could receive $66.56 per share.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00394",
+    "type": "novel-generated",
+    "question": "In 2022 Q2, which of JPM's business segments had the highest net income?",
+    "gold": "Corporate & Investment Bank. Its net income was $3725 million.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00206",
+    "type": "domain-relevant",
+    "question": "Are JPM's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+    "gold": "Since JPM is a financial institution, gross margin is not a relevant metric.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_02049",
+    "type": "novel-generated",
+    "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+    "gold": "Yes. It decreased.",
+    "answer": "June 30, 2023, when compared with March 31, 2023, months ended June 30, 2023, compared with the same. reflecting increases in fixed income offset by market volatility period in the prior year predominantly driven by risk. relating to commodities rolling out of the one-year historical reductions impacting Credit Portfolio VaR as well as fixed. look-back period. income.. [1]",
+    "abstained": false,
+    "citations": [
+     "JPMORGAN_2023Q2_10Q.pdf, p. 85"
+    ]
+   },
+   {
+    "id": "financebench_id_10499",
+    "type": "metrics-generated",
+    "question": "What is Kraft Heinz's FY2019 inventory turnover ratio? Inventory turnover ratio is defined as: (FY2019 COGS) / (average inventory between FY2018 and FY2019). Round your answer to two decimal places. Please base your judgments on the information provided primarily in the balance sheet and the P&L statement.",
+    "gold": "6.25",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04412",
+    "type": "metrics-generated",
+    "question": "We need to calculate a reasonable approximation (or exact number if possible) of a financial metric. Basing your judgment by information plainly provided in the balance sheet and the P&L statement, what is Lockheed Martin's FY2020 asset turnover ratio? Asset turnover ratio is defined as: FY2020 revenue / (average total assets between FY2019 and FY2020). Round your answer to two decimal places.",
+    "gold": "1.33",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03031",
+    "type": "metrics-generated",
+    "question": "What is Lockheed Martin's FY2021 net working capital? Define net working capital as total current assets less total current liabilities. Answer in USD millions. Respond to the question by assuming the perspective of an investment analyst who can only use the details shown within the balance sheet.",
+    "gold": "$5818.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03718",
+    "type": "metrics-generated",
+    "question": "What is Lockheed Martin's 2 year total revenue CAGR from FY2020 to FY2022 (in units of percents and round to one decimal place)? Provide a response to the question by primarily using the statement of income.",
+    "gold": "0.4%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04171",
+    "type": "metrics-generated",
+    "question": "Basing your judgments off of the balance sheet, what is the year end FY2018 amount of accounts payable for MGM Resorts? Answer in USD millions.",
+    "gold": "$303.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03849",
+    "type": "metrics-generated",
+    "question": "What is the FY2018 - FY2020 3 year average of capex as a % of revenue for MGM Resorts? Answer in units of percents and round to one decimal place. Please utilize information provided primarily within the statement of cash flows and the statement of income.",
+    "gold": "7.9%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00382",
+    "type": "novel-generated",
+    "question": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+    "gold": "Las Vegas resorts contributed ~90% of company level EBITDAR during FY2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01911",
+    "type": "novel-generated",
+    "question": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?",
+    "gold": "As adjusted EBIT is negative, coverage ratio is zero",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01912",
+    "type": "novel-generated",
+    "question": "Which region had the worst topline performance for MGM during FY2022?",
+    "gold": "MGM China experienced the worst topline performance amongst the other regions presented. Its revenue declined 44% in FY2022 whereas the other regions presented increased their revenues.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01254",
+    "type": "domain-relevant",
+    "question": "Has MGM Resorts paid dividends to common shareholders in FY2022?",
+    "gold": "Yes. MGM maintained 0.01$ per share annual dividend through out FY 2022.",
+    "answer": "Dividends paid to common shareholders (4,048) (4,789) (77,606) [1]",
+    "abstained": false,
+    "citations": [
+     "MGMRESORTS_2022_10K.pdf, p. 62"
+    ]
+   },
+   {
+    "id": "financebench_id_00407",
+    "type": "novel-generated",
+    "question": "Which type of debt received the largest investment among the short term investments for MGM in H1 FY2023?",
+    "gold": "the biggest short term investment is in corporate bonds (almost 82% of the total investment)",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04700",
+    "type": "metrics-generated",
+    "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+    "gold": "$32780.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00552",
+    "type": "domain-relevant",
+    "question": "Has Microsoft increased its debt on balance sheet between FY2023 and the FY2022 period?",
+    "gold": "No. Microsoft decreased its debt by $2.5bn in FY 2023 vs FY 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04458",
+    "type": "metrics-generated",
+    "question": "We want to calculate a financial metric. Please help us compute it by basing your answers off of the statement of income and the statement of cash flows. Here's the question: what is the FY2015 unadjusted EBITDA % margin for Netflix? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement).",
+    "gold": "5.4%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03282",
+    "type": "metrics-generated",
+    "question": "What is Netflix's year end FY2017 total current liabilities (in USD millions)? Base your judgments on the information provided primarily in the balance sheet.",
+    "gold": "$5466.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04302",
+    "type": "metrics-generated",
+    "question": "We need to calculate a reasonable approximation (or exact number if possible) of a financial metric. Basing your judgment by information plainly provided in the statement of income, what is Nike's three year average of cost of goods sold as a % of revenue from FY2016 to FY2018? Answer in units of percents and round to one decimal place.",
+    "gold": "55.1%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03531",
+    "type": "metrics-generated",
+    "question": "According to the details clearly outlined within the balance sheet, how much total current assets did Nike have at the end of FY2019? Answer in USD millions.",
+    "gold": "$16525.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04080",
+    "type": "metrics-generated",
+    "question": "When primarily referencing the income statement and the statement of financial position, what is the FY2021 inventory turnover ratio for Nike? Inventory turnover ratio is defined as: (FY2021 COGS) / (average inventory between FY2020 and FY2021). Round your answer to two decimal places.",
+    "gold": "3.46",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01163",
+    "type": "domain-relevant",
+    "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+    "gold": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00080",
+    "type": "domain-relevant",
+    "question": "Does Paypal have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+    "gold": "Yes. Paypal has a positive working capital of $ 1.6Bn as of FY2022 end.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04980",
+    "type": "metrics-generated",
+    "question": "What is the FY2021 capital expenditure amount (in USD billions) for PepsiCo? Respond to the question by assuming the perspective of an investment analyst who can only use the details shown within the statement of cash flows.",
+    "gold": "$4.60",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01009",
+    "type": "domain-relevant",
+    "question": "What are the geographies that Pepsico primarily operates in as of FY2022?",
+    "gold": "As of FY2022, Pepsico primarily operates in the following geographies: North America, Latin America, Europe, Africa, Middle East, South Asia, Asia Pacific, Australia, New Zealand and China.",
+    "answer": "Our products compete against products of international beverage and convenient food companies that, like us, operate in multiple geographies, as well as regional, local and private label and economy brand manufacturers and other competitors, including. smaller companies developing and selling micro brands directly to consumers through e-commerce platforms or through retailers. focused on locally sourced products. [1]",
+    "abstained": false,
+    "citations": [
+     "PEPSICO_2022_10K.pdf, p. 15"
+    ]
+   },
+   {
+    "id": "financebench_id_00735",
+    "type": "domain-relevant",
+    "question": "Has Pepsico reported any materially important ongoing legal battles from FY2022 and FY2021?",
+    "gold": "No, Pepsico is not involved in material legal battles.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01328",
+    "type": "domain-relevant",
+    "question": "What is the quantity of restructuring costs directly outlined in Pepsico's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+    "gold": "Pepsico's restructuring costs in FY2022 amounted to $411 million .",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_03620",
+    "type": "metrics-generated",
+    "question": "What is the FY2022 unadjusted EBITDA less capex for PepsiCo? Define unadjusted EBITDA as unadjusted operating income + depreciation and amortization [from cash flow statement]. Answer in USD millions. Respond to the question by assuming the perspective of an investment analyst who can only use the details shown within the statement of cash flows and the income statement.",
+    "gold": "$9068.00",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04481",
+    "type": "metrics-generated",
+    "question": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement.",
+    "gold": "16.5%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01474",
+    "type": "novel-generated",
+    "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+    "gold": "Pepsico experienced a strong start to FY2023.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01476",
+    "type": "novel-generated",
+    "question": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?",
+    "gold": "Pepsico raised full year guidance in respect of core constant currency EPS growth by 1 percentage point.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_01482",
+    "type": "novel-generated",
+    "question": "At the Pepsico AGM held on May 3, 2023, what was the outcome of the shareholder vote on the shareholder proposal for a congruency report by Pepsico on net-zero emissions policies?",
+    "gold": "The shareholder proposal for a congruency report by Pepsico on net-zero emissions policies was defeated.",
+    "answer": "Broker Non-Votes 172,969,325. (8) The shareholder proposal regarding a congruency report on net-zero emissions policies was defeated:. [1]",
+    "abstained": false,
+    "citations": [
+     "PEPSICO_2023_8K_dated-2023-05-05.pdf, p. 4"
+    ]
+   },
+   {
+    "id": "financebench_id_00705",
+    "type": "novel-generated",
+    "question": "By how much did Pepsico increase its unsecured five year revolving credit agreement on May 26, 2023?",
+    "gold": "$400,000,000 increase.",
+    "answer": "Effective May 26, 2023, PepsiCo terminated the $3,800,000,000 five year unsecured revolving credit agreement, dated as of May 27, 2022, among. [1]",
+    "abstained": false,
+    "citations": [
+     "PEPSICO_2023_8K_dated-2023-05-30.pdf, p. 2"
+    ]
+   },
+   {
+    "id": "financebench_id_00882",
+    "type": "novel-generated",
+    "question": "As of May 26, 2023, what is the total amount Pepsico may borrow under its unsecured revolving credit agreements?",
+    "gold": "Total amount Pepsico may borrow under unsecured revolving credit agreements = $8,400,000,000.",
+    "answer": "Effective May 26, 2023, PepsiCo, Inc. (“PepsiCo”) terminated the $3,800,000,000 364 day unsecured revolving credit agreement, dated as of. [1]",
+    "abstained": false,
+    "citations": [
+     "PEPSICO_2023_8K_dated-2023-05-30.pdf, p. 2"
+    ]
+   },
+   {
+    "id": "financebench_id_00302",
+    "type": "novel-generated",
+    "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+    "gold": "Yes, change in PPNE was positive year over year",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00702",
+    "type": "novel-generated",
+    "question": "Were there any potential events that are not in Pfizer's standard business operations that substantially increased net income in 2019?",
+    "gold": "Yes, the gain on completion of Consumer Healthcare JV Transaction",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_02416",
+    "type": "novel-generated",
+    "question": "What are three main companies acquired by Pfizer mentioned in this 10K report?",
+    "gold": "Trillium, Array, and Therachon",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00283",
+    "type": "novel-generated",
+    "question": "How much does Pfizer expect to pay to spin off Upjohn in the future in USD million?",
+    "gold": "77.78",
+    "answer": "Under agreements related to the 2020 spin-off and the combination of the Upjohn Business with Mylan to form Viatris, net amounts due to Viatris. were $25 million as of July 2, 2023 and $94 million as of December 31, 2022. [1]",
+    "abstained": false,
+    "citations": [
+     "Pfizer_2023Q2_10Q.pdf, p. 14"
+    ]
+   },
+   {
+    "id": "financebench_id_00724",
+    "type": "novel-generated",
+    "question": "For Pfizer, which geographic region had the biggest drop in Q22023 year over year revenues (on a percentage basis)?",
+    "gold": "Developed Rest of the World",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_02419",
+    "type": "novel-generated",
+    "question": "As of Q2'2023, is Pfizer spinning off any large business segments?",
+    "gold": "Yes, it's spinning off Upjohn.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00601",
+    "type": "novel-generated",
+    "question": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
+    "gold": "Lower marketing expenses and leverage of incentive compensation due to higher sales. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00603",
+    "type": "novel-generated",
+    "question": "What drove the increase in Ulta Beauty's merchandise inventories balance at end of FY2023?",
+    "gold": "Increase in Merchandise inventories balance was driven by the opening of 47 new stores. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00605",
+    "type": "novel-generated",
+    "question": "What percent of Ulta Beauty's total spend on stock repurchases for FY 2023 occurred in Q4 of FY2023?",
+    "gold": "36%. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00606",
+    "type": "novel-generated",
+    "question": "Did Ulta Beauty's wages expense as a percent of net sales increase or decrease in FY2023?",
+    "gold": "Wages expense as a percent of net sales increased in FY2023. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00746",
+    "type": "domain-relevant",
+    "question": "Which debt securities are registered to trade on a national securities exchange under Ulta Beauty's name as of FY2023?",
+    "gold": "There are none",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00521",
+    "type": "domain-relevant",
+    "question": "What are major acquisitions that Ulta Beauty has done in FY2023 and FY2022?",
+    "gold": "Ulta Beauty did not make any acquisitions in FY2023 and FY2022.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00859",
+    "type": "novel-generated",
+    "question": "Among all of the derivative instruments that Verizon used to manage the exposure to fluctuations of foreign currencies exchange rates or interest rates, which one had the highest notional value in FY 2021?",
+    "gold": "Cross currency swaps. Its notional value was $32,502 million.",
+    "answer": "We enter into derivative transactions primarily to manage our exposure to fluctuations in foreign currency exchange rates and interest rates.. [1]",
+    "abstained": false,
+    "citations": [
+     "VERIZON_2021_10K.pdf, p. 85"
+    ]
+   },
+   {
+    "id": "financebench_id_02024",
+    "type": "novel-generated",
+    "question": "As of FY 2021, how much did Verizon expect to pay for its retirees in 2024?",
+    "gold": "The estimated pension benefits were $1097 million, and the estimated health care and life insurance benefits were $862 million.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00216",
+    "type": "domain-relevant",
+    "question": "Does Verizon have a reasonably healthy liquidity profile based on its quick ratio for FY 2022? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+    "gold": "No. The quick ratio was approximately 0.54 for Verizon. It indicated that Verizon does not have a healthy liquidity profile.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00215",
+    "type": "domain-relevant",
+    "question": "Is Verizon a capital intensive business based on FY 2022 data?",
+    "gold": "Yes. Verizon's capital intensity ratio was approximately 2.774729. This means that it took approximately $2.77 of assets to generate $1 of revenue and thus, Verizon can be considered capital intensive.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_00566",
+    "type": "domain-relevant",
+    "question": "Has Verizon increased its debt on balance sheet between 2022 and the 2021 fiscal period?",
+    "gold": "No. Verizon's debt decreased by $229 million.",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_06247",
+    "type": "metrics-generated",
+    "question": "What is FY2018 days payable outstanding (DPO) for Walmart? DPO is defined as: 365 * (average accounts payable between FY2017 and FY2018) / (FY2018 COGS + change in inventory between FY2017 and FY2018). Round your answer to two decimal places. Please base your judgments on the information provided primarily in the statement of financial position and the P&L statement.",
+    "gold": "42.69",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_04784",
+    "type": "metrics-generated",
+    "question": "Based on the information provided primarily in the statement of income, what is the FY2018 - FY2019 change in unadjusted operating income % margin for Walmart? Answer in units of percents and round to one decimal place.",
+    "gold": "0.2%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   },
+   {
+    "id": "financebench_id_06741",
+    "type": "metrics-generated",
+    "question": "What is the FY2018 - FY2020 3 year average unadjusted EBITDA % margin for Walmart? Define unadjusted EBITDA as unadjusted operating income + depreciation and amortization from the cash flow statement. Answer in units of percents and round to one decimal place. Calculate what was asked by utilizing the line items clearly shown in the P&L statement and the cash flow statement.",
+    "gold": "6.2%",
+    "answer": "Not found in the data room.",
+    "abstained": true,
+    "citations": []
+   }
+  ]
+ },
+ "cuad": {
+  "v1_provision": {
+   "contracts": 102,
+   "with_provision": 26,
+   "precision": 0.631578947368421,
+   "recall": 0.46153846153846156,
+   "f1": 0.5333333333333333,
+   "counts": {
+    "tp": 12,
+    "fp": 7,
+    "fn": 14,
+    "tn": 69
+   },
+   "errors": [
+    {
+     "title": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the foregoing, (a) either Party may, without the other Party's consent, assign this Agreement and its rights and obligations hereunder in whole or in part to an Affiliate; and (b) Dova may assign this Agreement to a successor in interest in connection with the sale or other transfer "
+    },
+    {
+     "title": "RitterPharmaceuticalsInc_20200313_S-4A_EX-10.54_12055220_EX-10.54_Development Agreement",
+     "error": "false positive",
+     "detected": "Sale Transaction shall mean (i) any transaction in which Qualigen, Qualigen's business or control of Qualigen is acquired, (ii) any license, sale, lease, transfer, or other disposition, in a single transaction or series of related transactions, of all or substantially all of Qualigen's assets other "
+    },
+    {
+     "title": "HEMISPHERX - Sales, Marketing, Distribution, and Supply Agreement",
+     "error": "false positive",
+     "detected": "Change of Control SCIEN will maintain and follow change control SOP(s) to ensure that changes to equipment, procedures, processes, etc. occur in a controlled manner and in compliance with requirements e defined by the U.S."
+    },
+    {
+     "title": "MphaseTechnologiesInc_20030911_10-K_EX-10.15_1560667_EX-10.15_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "This Agreement shall terminate in the event of a significant change in          the management or ownership of mPhase or in the event mPhase is the          subject of any bankruptcy proceedings."
+    },
+    {
+     "title": "AgapeAtpCorp_20191202_10-KA_EX-10.1_11911128_EX-10.1_Supply Agreement",
+     "error": "missed",
+     "lawyer_span": "If control of either party shall pass from the present shareholders or owners or controllers to other persons whom the other party shall in their absolute discretion regard as unsuitable."
+    },
+    {
+     "title": "PhoenixNewMediaLtd_20110421_F-1_EX-10.17_6958322_EX-10.17_Content License Agreement",
+     "error": "missed",
+     "lawyer_span": "In the event that     8.2.1 one Party is in breach of its obligations hereunder and fails to cure such breach within ten (10) Business Days following the other  Party's written notice thereof, then the non-breaching Party may terminate this Agreement;     8.2.2 one Party enters into a bankruptcy pro"
+    },
+    {
+     "title": "BerkshireHillsBancorpInc_20120809_10-Q_EX-10.16_7708169_EX-10.16_Endorsement Agreement",
+     "error": "missed",
+     "lawyer_span": "In the case of reorganization, merger, consolidation, or sale of all or substantially all of its  assets, any attempt to assign this Agreement other than as permitted above will be null and void."
+    },
+    {
+     "title": "SUCAMPOPHARMACEUTICALS,INC_11_04_2015-EX-10.2-STRATEGIC ALLIANCE AGREEMENT",
+     "error": "false positive",
+     "detected": "Material Contracts Relating to Business\" in the securities report (yuka-shoken-hokokusho) of the Company filed with the Kanto Local Finance Bureau on June 24, 2015 in accordance with Article 24, Paragraph 1 of the FIEL, except for the License Agreement with Astellas Pharma Inc., which is no longer e"
+    },
+    {
+     "title": "SigaTechnologiesInc_20190603_8-K_EX-10.1_11695818_EX-10.1_Promotion Agreement",
+     "error": "false positive",
+     "detected": "Bankruptcy Code, as amended from time to time, and the rules and regulations and guidelines promulgated thereunder or the bankruptcy laws of any other country or Governmental Authority, as amended from time to time, and the rules and regulations and guidelines promulgated thereunder. \"Binding Portio"
+    },
+    {
+     "title": "Reinsurance Group of America, Incorporated - A_R REMARKETING  AGREEMENT",
+     "error": "false positive",
+     "detected": "Except for the free writing prospectus(es), if any, identified in Schedule 1 hereto, the Company has not prepared, used or referred to, and will not, without the Remarketing Agent's prior consent, not to be unreasonably withheld or delayed, prepare, use or refer to, any free writing prospectus. (f) "
+    },
+    {
+     "title": "BIOPURECORP_06_30_1999-EX-10.13-AGENCY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "In the event of any material change in the organization,       ownership, management or control of the business of the Agent, the Company       may, at its option, terminate this Agreement upon giving written notice of       termination to the Agent."
+    },
+    {
+     "title": "SoupmanInc_20150814_8-K_EX-10.1_9230148_EX-10.1_Franchise Agreement1",
+     "error": "missed",
+     "lawyer_span": "Any change in the control of you shall be deemed a transfer for purposes of this Agreement."
+    },
+    {
+     "title": "GSITECHNOLOGYINC_11_16_2009-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT between SONY ELECTRONICS INC. and GSI TECHNOLOGY, INC.",
+     "error": "missed",
+     "lawyer_span": "other Party with notice of the transfer or assignment."
+    },
+    {
+     "title": "HALITRON,INC_03_01_2005-EX-10.15-SPONSORSHIP AND DEVELOPMENT AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "an affiliated, parent, subsidiary, related company (or in the case of the production of Advertising Materials to an advertising agency representing TDA) so as to effectuate the intent of this Agreement and the subject matter hereof, although TDA will continue to be liable for all financial obligatio"
+    },
+    {
+     "title": "TRICITYBANKSHARESCORP_05_15_1998-EX-10-OUTSOURCING AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "If a Change in Control occurs with respect to Customer, M&I agrees to continue to provide Services under this Agreement; provided that (a) M&I's obligation to provide Services shall be limited to the entities comprising the Customer prior to such Change in Control and (b) M&I's obligation to provide"
+    },
+    {
+     "title": "ElPolloLocoHoldingsInc_20200306_10-K_EX-10.16_12041700_EX-10.16_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "For purposes of this Section, a sale of stock, or any membership or partnership interest in Developer, or a merger or other combination of Developer shall be considered a transfer of Developer's interest prohibited hereunder."
+    },
+    {
+     "title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "The rights of Developer under this Agreement shall immediately cease and be terminated upon the sale or transfer of no less than a majority of, or a controlling interest in or over, the voting capital or ownership capital of Developer unless an assignment of such rights pursuant to such sale or tran"
+    },
+    {
+     "title": "IMPCOTECHNOLOGIESINC_04_15_2003-EX-10.65-JOINT VENTURE AGREEMENT",
+     "error": "false positive",
+     "detected": "1.2 Interpretation: In this Agreement, unless the contrary intention appears, a reference to: i) an \"amendment\" includes a supplement, novation, replacement or re-enactment and \"amended\" is to be construed accordingly; ii) \"assets\" includes properties (both present and future and whether tangible or"
+    },
+    {
+     "title": "EbixInc_20010515_10-Q_EX-10.3_4049767_EX-10.3_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "Either party may terminate immediately upon written notice if the other       party (i) ceases to function as a going concern or to conduct operations       in the normal course of business; (ii) has a petition filed against it       under any state or federal bankruptcy law which petition has not b"
+    },
+    {
+     "title": "EMERALDHEALTHTHERAPEUTICSINC_06_10_2020-EX-4.5-CONSULTING AGREEMENT - DR. GAETANO MORELLO N.D. INC.",
+     "error": "false positive",
+     "detected": "For the purposes of this definition and without limitation, Cause does not include a reduction in the Contractor's Fees or Perks implemented by the Company acting in good faith to respond to adverse market conditions, or in response to adverse cash flow issues then being faced by the Company. (e) \"C"
+    },
+    {
+     "title": "INGEVITYCORP_05_16_2016-EX-10.5-INTELLECTUAL PROPERTY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "If SpinCo enters an agreement to transfer the license granted to it under this  Section 3.2  in connection with any sale or transfer of a SpinCo business, then Parent and members of the Parent Group shall be made third party beneficiaries under such transfer agreement to enforce breaches of the lice"
+    }
+   ]
+  },
+  "v1_termination": {
+   "contracts": 102,
+   "with_provision": 26,
+   "precision": 1.0,
+   "recall": 0.11538461538461539,
+   "f1": 0.20689655172413793,
+   "counts": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 23,
+    "tn": 76
+   },
+   "errors": [
+    {
+     "title": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the foregoing, (a) either Party may, without the other Party's consent, assign this Agreement and its rights and obligations hereunder in whole or in part to an Affiliate; and (b) Dova may assign this Agreement to a successor in interest in connection with the sale or other transfer "
+    },
+    {
+     "title": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+     "error": "missed",
+     "lawyer_span": "(iii) upon any Change of Control (as defined in Section 20.4) of PPI, by repayment to EKR in full of the balance of the  Advanced Royalty Payment not previously used for offsets, which payment shall be made to EKR by PPI within ten  (10) days after the closing date (without any conditions) of any su"
+    },
+    {
+     "title": "Columbia Laboratories, (Bermuda) Ltd. - AMEND NO. 2 TO MANUFACTURING AND SUPPLY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "(ii) a Change of Control Event with respect to Fleet occurs;"
+    },
+    {
+     "title": "ArconicRolledProductsCorp_20191217_10-12B_EX-2.7_11923804_EX-2.7_Trademark License Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the foregoing, no such consent of Licensor is required under this Agreement in the event of a Change of Control of Licensee so long as: (a) the resulting, surviving or transferee Person assumes all the obligations of the Licensee by operation of Law or pursuant to an agreement in for"
+    },
+    {
+     "title": "HarpoonTherapeuticsInc_20200312_10-K_EX-10.18_12051356_EX-10.18_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the provisions of Section 5.8, if, during the Term, (a) Harpoon or any of its Affiliates acquires, as the result of an Acquisition, rights to a Competing Product, such Acquisition, and the development, manufacture or commercialization of such Competing Product thereafter, shall not c"
+    },
+    {
+     "title": "MphaseTechnologiesInc_20030911_10-K_EX-10.15_1560667_EX-10.15_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "This Agreement shall terminate in the event of a significant change in          the management or ownership of mPhase or in the event mPhase is the          subject of any bankruptcy proceedings."
+    },
+    {
+     "title": "BABCOCK_WILCOXENTERPRISES,INC_08_04_2015-EX-10.17-INTELLECTUAL PROPERTY AGREEMENT between THE BABCOCK _ WILCOX COMPANY and BABCOCK _ WILCOX ENTERPRISES, INC.",
+     "error": "missed",
+     "lawyer_span": "The foregoing right of first refusal shall cease in the event of a Change of Control of either RemainCo or SpinCo, provided, however, that the Parties will discuss the feasibility of future collaboration, specifically related to the contribution of nuclear related subject matter by RemainCo, in good"
+    },
+    {
+     "title": "VAPOTHERM, INC. - Manufacturing and Supply Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding anything to the contrary in this Agreement, Medica shall neither enter into an agreement to nor shall consummate (a) any Change of Control or (b) any sale of all or substantially all of its assets relating to the manufacture of the Cartridges unless (a) it provides Vapotherm written "
+    },
+    {
+     "title": "AgapeAtpCorp_20191202_10-KA_EX-10.1_11911128_EX-10.1_Supply Agreement",
+     "error": "missed",
+     "lawyer_span": "If control of either party shall pass from the present shareholders or owners or controllers to other persons whom the other party shall in their absolute discretion regard as unsuitable."
+    },
+    {
+     "title": "PhoenixNewMediaLtd_20110421_F-1_EX-10.17_6958322_EX-10.17_Content License Agreement",
+     "error": "missed",
+     "lawyer_span": "In the event that     8.2.1 one Party is in breach of its obligations hereunder and fails to cure such breach within ten (10) Business Days following the other  Party's written notice thereof, then the non-breaching Party may terminate this Agreement;     8.2.2 one Party enters into a bankruptcy pro"
+    },
+    {
+     "title": "BerkshireHillsBancorpInc_20120809_10-Q_EX-10.16_7708169_EX-10.16_Endorsement Agreement",
+     "error": "missed",
+     "lawyer_span": "In the case of reorganization, merger, consolidation, or sale of all or substantially all of its  assets, any attempt to assign this Agreement other than as permitted above will be null and void."
+    },
+    {
+     "title": "BIOPURECORP_06_30_1999-EX-10.13-AGENCY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "In the event of any material change in the organization,       ownership, management or control of the business of the Agent, the Company       may, at its option, terminate this Agreement upon giving written notice of       termination to the Agent."
+    },
+    {
+     "title": "SoupmanInc_20150814_8-K_EX-10.1_9230148_EX-10.1_Franchise Agreement1",
+     "error": "missed",
+     "lawyer_span": "Any change in the control of you shall be deemed a transfer for purposes of this Agreement."
+    },
+    {
+     "title": "GSITECHNOLOGYINC_11_16_2009-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT between SONY ELECTRONICS INC. and GSI TECHNOLOGY, INC.",
+     "error": "missed",
+     "lawyer_span": "other Party with notice of the transfer or assignment."
+    },
+    {
+     "title": "MusclepharmCorp_20170208_10-KA_EX-10.38_9893581_EX-10.38_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "Nothwithstanding the foregoing, this Agreement may be assigned without the AS Parties' consent by MusclePharm in connection with a change of control transaction; provided that the acquirer of MusclePharm shall have financial resources substantially similar or greater than MusclePharm and shall speci"
+    },
+    {
+     "title": "HALITRON,INC_03_01_2005-EX-10.15-SPONSORSHIP AND DEVELOPMENT AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "an affiliated, parent, subsidiary, related company (or in the case of the production of Advertising Materials to an advertising agency representing TDA) so as to effectuate the intent of this Agreement and the subject matter hereof, although TDA will continue to be liable for all financial obligatio"
+    },
+    {
+     "title": "PHLVARIABLEINSURANCECOCT_08_17_2009-EX-10.1-STRATEGIC ALLIANCE AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "No Party shall assign this Agreement or any  rights or obligations hereunder or, except as expressly set forth in the Agreement with respect to the PHL Services  and Investors Capital Services, delegate any of their respective duties and obligations hereunder, without the prior  written consent of t"
+    },
+    {
+     "title": "TRICITYBANKSHARESCORP_05_15_1998-EX-10-OUTSOURCING AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "If a Change in Control occurs with respect to Customer, M&I agrees to continue to provide Services under this Agreement; provided that (a) M&I's obligation to provide Services shall be limited to the entities comprising the Customer prior to such Change in Control and (b) M&I's obligation to provide"
+    },
+    {
+     "title": "ElPolloLocoHoldingsInc_20200306_10-K_EX-10.16_12041700_EX-10.16_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "For purposes of this Section, a sale of stock, or any membership or partnership interest in Developer, or a merger or other combination of Developer shall be considered a transfer of Developer's interest prohibited hereunder."
+    },
+    {
+     "title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "The rights of Developer under this Agreement shall immediately cease and be terminated upon the sale or transfer of no less than a majority of, or a controlling interest in or over, the voting capital or ownership capital of Developer unless an assignment of such rights pursuant to such sale or tran"
+    },
+    {
+     "title": "EbixInc_20010515_10-Q_EX-10.3_4049767_EX-10.3_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "Either party may terminate immediately upon written notice if the other       party (i) ceases to function as a going concern or to conduct operations       in the normal course of business; (ii) has a petition filed against it       under any state or federal bankruptcy law which petition has not b"
+    },
+    {
+     "title": "GOOSEHEADINSURANCE,INC_04_02_2018-EX-10.6-Franchise Agreement",
+     "error": "missed",
+     "lawyer_span": "You agree not to make a transfer (and not to permit any other party to make a transfer) without our prior written consent. 16.4.1.1 As used in this Agreement, the term \"transfer\" is agreed to mean any sale, assignment, conveyance, pledge, encumbrance, merger, creation of a security interest in, and/"
+    },
+    {
+     "title": "INGEVITYCORP_05_16_2016-EX-10.5-INTELLECTUAL PROPERTY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "If SpinCo enters an agreement to transfer the license granted to it under this  Section 3.2  in connection with any sale or transfer of a SpinCo business, then Parent and members of the Parent Group shall be made third party beneficiaries under such transfer agreement to enforce breaches of the lice"
+    }
+   ]
+  },
+  "v2_provision": {
+   "contracts": 102,
+   "with_provision": 26,
+   "precision": 0.7368421052631579,
+   "recall": 0.5384615384615384,
+   "f1": 0.6222222222222222,
+   "counts": {
+    "tp": 14,
+    "fp": 5,
+    "fn": 12,
+    "tn": 71
+   },
+   "errors": [
+    {
+     "title": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the foregoing, (a) either Party may, without the other Party's consent, assign this Agreement and its rights and obligations hereunder in whole or in part to an Affiliate; and (b) Dova may assign this Agreement to a successor in interest in connection with the sale or other transfer "
+    },
+    {
+     "title": "N2KINC_10_16_1997-EX-10.16-SPONSORSHIP AGREEMENT",
+     "error": "false positive",
+     "detected": "Neither party may assign this Agreement, in whole or in part, without the other party's written consent (which will not be unreasonably withheld), except that no such consent will be required in connection with (i) a merger, reorganization or sale of all, or substantially all, of such party's assets"
+    },
+    {
+     "title": "RitterPharmaceuticalsInc_20200313_S-4A_EX-10.54_12055220_EX-10.54_Development Agreement",
+     "error": "false positive",
+     "detected": "Sale Transaction shall mean (i) any transaction in which Qualigen, Qualigen's business or control of Qualigen is acquired, (ii) any license, sale, lease, transfer, or other disposition, in a single transaction or series of related transactions, of all or substantially all of Qualigen's assets other "
+    },
+    {
+     "title": "MphaseTechnologiesInc_20030911_10-K_EX-10.15_1560667_EX-10.15_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "This Agreement shall terminate in the event of a significant change in          the management or ownership of mPhase or in the event mPhase is the          subject of any bankruptcy proceedings."
+    },
+    {
+     "title": "AgapeAtpCorp_20191202_10-KA_EX-10.1_11911128_EX-10.1_Supply Agreement",
+     "error": "missed",
+     "lawyer_span": "If control of either party shall pass from the present shareholders or owners or controllers to other persons whom the other party shall in their absolute discretion regard as unsuitable."
+    },
+    {
+     "title": "PhoenixNewMediaLtd_20110421_F-1_EX-10.17_6958322_EX-10.17_Content License Agreement",
+     "error": "missed",
+     "lawyer_span": "In the event that     8.2.1 one Party is in breach of its obligations hereunder and fails to cure such breach within ten (10) Business Days following the other  Party's written notice thereof, then the non-breaching Party may terminate this Agreement;     8.2.2 one Party enters into a bankruptcy pro"
+    },
+    {
+     "title": "BerkshireHillsBancorpInc_20120809_10-Q_EX-10.16_7708169_EX-10.16_Endorsement Agreement",
+     "error": "missed",
+     "lawyer_span": "In the case of reorganization, merger, consolidation, or sale of all or substantially all of its  assets, any attempt to assign this Agreement other than as permitted above will be null and void."
+    },
+    {
+     "title": "SUCAMPOPHARMACEUTICALS,INC_11_04_2015-EX-10.2-STRATEGIC ALLIANCE AGREEMENT",
+     "error": "false positive",
+     "detected": "Material Contracts Relating to Business\" in the securities report (yuka-shoken-hokokusho) of the Company filed with the Kanto Local Finance Bureau on June 24, 2015 in accordance with Article 24, Paragraph 1 of the FIEL, except for the License Agreement with Astellas Pharma Inc., which is no longer e"
+    },
+    {
+     "title": "BIOPURECORP_06_30_1999-EX-10.13-AGENCY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "In the event of any material change in the organization,       ownership, management or control of the business of the Agent, the Company       may, at its option, terminate this Agreement upon giving written notice of       termination to the Agent."
+    },
+    {
+     "title": "GSITECHNOLOGYINC_11_16_2009-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT between SONY ELECTRONICS INC. and GSI TECHNOLOGY, INC.",
+     "error": "missed",
+     "lawyer_span": "other Party with notice of the transfer or assignment."
+    },
+    {
+     "title": "HALITRON,INC_03_01_2005-EX-10.15-SPONSORSHIP AND DEVELOPMENT AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "an affiliated, parent, subsidiary, related company (or in the case of the production of Advertising Materials to an advertising agency representing TDA) so as to effectuate the intent of this Agreement and the subject matter hereof, although TDA will continue to be liable for all financial obligatio"
+    },
+    {
+     "title": "HC2HOLDINGS,INC_05_14_2020-EX-10.1-COOPERATION AGREEMENT",
+     "error": "false positive",
+     "detected": "Glazer to Serve as Chairman of the Board Recent Collaboration With Stockholders Will Result in More Than 50% of the Board Being Refreshed Following the 2020 Annual Meeting MG Capital Agrees to Withdraw its Consent Solicitation and Nomination Notice NEW YORK, May 14, 2020 (GLOBE NEWSWIRE)—HC2 Holding"
+    },
+    {
+     "title": "ElPolloLocoHoldingsInc_20200306_10-K_EX-10.16_12041700_EX-10.16_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "For purposes of this Section, a sale of stock, or any membership or partnership interest in Developer, or a merger or other combination of Developer shall be considered a transfer of Developer's interest prohibited hereunder."
+    },
+    {
+     "title": "EbixInc_20010515_10-Q_EX-10.3_4049767_EX-10.3_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "Either party may terminate immediately upon written notice if the other       party (i) ceases to function as a going concern or to conduct operations       in the normal course of business; (ii) has a petition filed against it       under any state or federal bankruptcy law which petition has not b"
+    },
+    {
+     "title": "GOOSEHEADINSURANCE,INC_04_02_2018-EX-10.6-Franchise Agreement",
+     "error": "missed",
+     "lawyer_span": "You agree not to make a transfer (and not to permit any other party to make a transfer) without our prior written consent. 16.4.1.1 As used in this Agreement, the term \"transfer\" is agreed to mean any sale, assignment, conveyance, pledge, encumbrance, merger, creation of a security interest in, and/"
+    },
+    {
+     "title": "EMERALDHEALTHTHERAPEUTICSINC_06_10_2020-EX-4.5-CONSULTING AGREEMENT - DR. GAETANO MORELLO N.D. INC.",
+     "error": "false positive",
+     "detected": "For the purposes of this definition and without limitation, Cause does not include a reduction in the Contractor's Fees or Perks implemented by the Company acting in good faith to respond to adverse market conditions, or in response to adverse cash flow issues then being faced by the Company. (e) \"C"
+    },
+    {
+     "title": "INGEVITYCORP_05_16_2016-EX-10.5-INTELLECTUAL PROPERTY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "If SpinCo enters an agreement to transfer the license granted to it under this  Section 3.2  in connection with any sale or transfer of a SpinCo business, then Parent and members of the Parent Group shall be made third party beneficiaries under such transfer agreement to enforce breaches of the lice"
+    }
+   ]
+  },
+  "v2_termination": {
+   "contracts": 102,
+   "with_provision": 26,
+   "precision": 1.0,
+   "recall": 0.11538461538461539,
+   "f1": 0.20689655172413793,
+   "counts": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 23,
+    "tn": 76
+   },
+   "errors": [
+    {
+     "title": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the foregoing, (a) either Party may, without the other Party's consent, assign this Agreement and its rights and obligations hereunder in whole or in part to an Affiliate; and (b) Dova may assign this Agreement to a successor in interest in connection with the sale or other transfer "
+    },
+    {
+     "title": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+     "error": "missed",
+     "lawyer_span": "(iii) upon any Change of Control (as defined in Section 20.4) of PPI, by repayment to EKR in full of the balance of the  Advanced Royalty Payment not previously used for offsets, which payment shall be made to EKR by PPI within ten  (10) days after the closing date (without any conditions) of any su"
+    },
+    {
+     "title": "Columbia Laboratories, (Bermuda) Ltd. - AMEND NO. 2 TO MANUFACTURING AND SUPPLY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "(ii) a Change of Control Event with respect to Fleet occurs;"
+    },
+    {
+     "title": "ArconicRolledProductsCorp_20191217_10-12B_EX-2.7_11923804_EX-2.7_Trademark License Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the foregoing, no such consent of Licensor is required under this Agreement in the event of a Change of Control of Licensee so long as: (a) the resulting, surviving or transferee Person assumes all the obligations of the Licensee by operation of Law or pursuant to an agreement in for"
+    },
+    {
+     "title": "HarpoonTherapeuticsInc_20200312_10-K_EX-10.18_12051356_EX-10.18_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding the provisions of Section 5.8, if, during the Term, (a) Harpoon or any of its Affiliates acquires, as the result of an Acquisition, rights to a Competing Product, such Acquisition, and the development, manufacture or commercialization of such Competing Product thereafter, shall not c"
+    },
+    {
+     "title": "MphaseTechnologiesInc_20030911_10-K_EX-10.15_1560667_EX-10.15_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "This Agreement shall terminate in the event of a significant change in          the management or ownership of mPhase or in the event mPhase is the          subject of any bankruptcy proceedings."
+    },
+    {
+     "title": "BABCOCK_WILCOXENTERPRISES,INC_08_04_2015-EX-10.17-INTELLECTUAL PROPERTY AGREEMENT between THE BABCOCK _ WILCOX COMPANY and BABCOCK _ WILCOX ENTERPRISES, INC.",
+     "error": "missed",
+     "lawyer_span": "The foregoing right of first refusal shall cease in the event of a Change of Control of either RemainCo or SpinCo, provided, however, that the Parties will discuss the feasibility of future collaboration, specifically related to the contribution of nuclear related subject matter by RemainCo, in good"
+    },
+    {
+     "title": "VAPOTHERM, INC. - Manufacturing and Supply Agreement",
+     "error": "missed",
+     "lawyer_span": "Notwithstanding anything to the contrary in this Agreement, Medica shall neither enter into an agreement to nor shall consummate (a) any Change of Control or (b) any sale of all or substantially all of its assets relating to the manufacture of the Cartridges unless (a) it provides Vapotherm written "
+    },
+    {
+     "title": "AgapeAtpCorp_20191202_10-KA_EX-10.1_11911128_EX-10.1_Supply Agreement",
+     "error": "missed",
+     "lawyer_span": "If control of either party shall pass from the present shareholders or owners or controllers to other persons whom the other party shall in their absolute discretion regard as unsuitable."
+    },
+    {
+     "title": "PhoenixNewMediaLtd_20110421_F-1_EX-10.17_6958322_EX-10.17_Content License Agreement",
+     "error": "missed",
+     "lawyer_span": "In the event that     8.2.1 one Party is in breach of its obligations hereunder and fails to cure such breach within ten (10) Business Days following the other  Party's written notice thereof, then the non-breaching Party may terminate this Agreement;     8.2.2 one Party enters into a bankruptcy pro"
+    },
+    {
+     "title": "BerkshireHillsBancorpInc_20120809_10-Q_EX-10.16_7708169_EX-10.16_Endorsement Agreement",
+     "error": "missed",
+     "lawyer_span": "In the case of reorganization, merger, consolidation, or sale of all or substantially all of its  assets, any attempt to assign this Agreement other than as permitted above will be null and void."
+    },
+    {
+     "title": "BIOPURECORP_06_30_1999-EX-10.13-AGENCY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "In the event of any material change in the organization,       ownership, management or control of the business of the Agent, the Company       may, at its option, terminate this Agreement upon giving written notice of       termination to the Agent."
+    },
+    {
+     "title": "SoupmanInc_20150814_8-K_EX-10.1_9230148_EX-10.1_Franchise Agreement1",
+     "error": "missed",
+     "lawyer_span": "Any change in the control of you shall be deemed a transfer for purposes of this Agreement."
+    },
+    {
+     "title": "GSITECHNOLOGYINC_11_16_2009-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT between SONY ELECTRONICS INC. and GSI TECHNOLOGY, INC.",
+     "error": "missed",
+     "lawyer_span": "other Party with notice of the transfer or assignment."
+    },
+    {
+     "title": "MusclepharmCorp_20170208_10-KA_EX-10.38_9893581_EX-10.38_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "Nothwithstanding the foregoing, this Agreement may be assigned without the AS Parties' consent by MusclePharm in connection with a change of control transaction; provided that the acquirer of MusclePharm shall have financial resources substantially similar or greater than MusclePharm and shall speci"
+    },
+    {
+     "title": "HALITRON,INC_03_01_2005-EX-10.15-SPONSORSHIP AND DEVELOPMENT AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "an affiliated, parent, subsidiary, related company (or in the case of the production of Advertising Materials to an advertising agency representing TDA) so as to effectuate the intent of this Agreement and the subject matter hereof, although TDA will continue to be liable for all financial obligatio"
+    },
+    {
+     "title": "PHLVARIABLEINSURANCECOCT_08_17_2009-EX-10.1-STRATEGIC ALLIANCE AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "No Party shall assign this Agreement or any  rights or obligations hereunder or, except as expressly set forth in the Agreement with respect to the PHL Services  and Investors Capital Services, delegate any of their respective duties and obligations hereunder, without the prior  written consent of t"
+    },
+    {
+     "title": "TRICITYBANKSHARESCORP_05_15_1998-EX-10-OUTSOURCING AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "If a Change in Control occurs with respect to Customer, M&I agrees to continue to provide Services under this Agreement; provided that (a) M&I's obligation to provide Services shall be limited to the entities comprising the Customer prior to such Change in Control and (b) M&I's obligation to provide"
+    },
+    {
+     "title": "ElPolloLocoHoldingsInc_20200306_10-K_EX-10.16_12041700_EX-10.16_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "For purposes of this Section, a sale of stock, or any membership or partnership interest in Developer, or a merger or other combination of Developer shall be considered a transfer of Developer's interest prohibited hereunder."
+    },
+    {
+     "title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+     "error": "missed",
+     "lawyer_span": "The rights of Developer under this Agreement shall immediately cease and be terminated upon the sale or transfer of no less than a majority of, or a controlling interest in or over, the voting capital or ownership capital of Developer unless an assignment of such rights pursuant to such sale or tran"
+    },
+    {
+     "title": "EbixInc_20010515_10-Q_EX-10.3_4049767_EX-10.3_Co-Branding Agreement",
+     "error": "missed",
+     "lawyer_span": "Either party may terminate immediately upon written notice if the other       party (i) ceases to function as a going concern or to conduct operations       in the normal course of business; (ii) has a petition filed against it       under any state or federal bankruptcy law which petition has not b"
+    },
+    {
+     "title": "GOOSEHEADINSURANCE,INC_04_02_2018-EX-10.6-Franchise Agreement",
+     "error": "missed",
+     "lawyer_span": "You agree not to make a transfer (and not to permit any other party to make a transfer) without our prior written consent. 16.4.1.1 As used in this Agreement, the term \"transfer\" is agreed to mean any sale, assignment, conveyance, pledge, encumbrance, merger, creation of a security interest in, and/"
+    },
+    {
+     "title": "INGEVITYCORP_05_16_2016-EX-10.5-INTELLECTUAL PROPERTY AGREEMENT",
+     "error": "missed",
+     "lawyer_span": "If SpinCo enters an agreement to transfer the license granted to it under this  Section 3.2  in connection with any sale or transfer of a SpinCo business, then Parent and members of the Parent Group shall be made third party beneficiaries under such transfer agreement to enforce breaches of the lice"
+    }
+   ]
+  }
+ }
+}

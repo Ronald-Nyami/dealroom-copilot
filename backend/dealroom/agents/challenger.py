@@ -93,6 +93,37 @@ def source_kind(file: str) -> str:
     return "other"
 
 
+# Version 1 was written for the synthetic contracts. Version 2 was developed on CUAD's training
+# split (408 real contracts) and is scored once on its test split; see reports/eval_real.md.
+CHANGE_OF_CONTROL_V1 = re.compile(r"(change of control|more than 50% of the shares|voting rights)", re.I)
+CHANGE_OF_CONTROL = re.compile(
+    r"(change (of|in) (the )?(control|ownership)|change in the (general )?(management, )?(ownership|control)|"
+    r"ownership change|controlling interest|more than (50|fifty) ?(%|percent)|acquired by (a|any) third party|"
+    r"is acquired by)",
+    re.I,
+)
+CONSEQUENCE = re.compile(r"(terminat|consent|notice|notify|assign|transfer|repayable)", re.I)
+TERMINATION_RIGHT = re.compile(r"(may terminate|right to terminate|terminate this agreement|becomes repayable)", re.I)
+NEGATED = re.compile(r"(does not by itself|has no effect|no change-of-control)", re.I)
+
+
+def change_of_control_sentences(text: str, require_termination: bool = False, version: int = 2) -> list[str]:
+    """Sentences that create a change-of-control provision (the challenger's own patterns)."""
+    from dealroom.agents.qa import SENTENCE
+
+    found = []
+    for sentence in SENTENCE.split(" ".join(text.split())):
+        if version == 1:
+            if not CHANGE_OF_CONTROL_V1.search(sentence) or NEGATED.search(sentence):
+                continue
+        elif not (CHANGE_OF_CONTROL.search(sentence) and CONSEQUENCE.search(sentence)) or NEGATED.search(sentence):
+            continue
+        if require_termination and not TERMINATION_RIGHT.search(sentence):
+            continue
+        found.append(sentence)
+    return found
+
+
 class Challenger:
     def __init__(
         self,
@@ -197,9 +228,8 @@ class Challenger:
         return shares
 
     def change_of_control(self) -> list[Argument]:
-        pattern = r"(change of control|more than 50% of the shares|voting rights)"
-        terminate = re.compile(r"(may terminate|right to terminate|terminate this agreement|becomes repayable)", re.I)
-        negated = re.compile(r"(does not by itself|has no effect|no change-of-control)", re.I)
+        pattern = CHANGE_OF_CONTROL.pattern
+        terminate, negated = TERMINATION_RIGHT, NEGATED
         shares = self._customer_shares()
         gaps = self._sentences(
             "change-of-control provisions agreement not yet been reviewed", r"not (yet )?been reviewed"

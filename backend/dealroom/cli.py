@@ -118,6 +118,28 @@ def cmd_demo(_: argparse.Namespace) -> None:
     print(f"Memo written to {out.relative_to(root())}")
 
 
+def cmd_real(args: argparse.Namespace) -> None:
+    """Real public data: fetch the pinned sources, index the filings, evaluate both tracks."""
+    from dealroom.models.llm import llm_from_env
+    from dealroom.realdata import fetch, financebench, report
+
+    cache = root() / ".cache" / "real"
+    if args.step in {"fetch", "all"}:
+        print(f"fetched {fetch.fetch(root() / 'data' / 'real' / 'manifest.json', cache)} files")
+    if args.step in {"index", "all"}:
+        built = financebench.build_indexes(
+            cache / "financebench" / "pdfs", cache / "financebench" / "index", workers=args.workers
+        )
+        print(f"indexed {len(built)} filings into {sum(built.values())} chunks")
+    if args.step in {"eval", "all"}:
+        results = report.run(cache, root() / "reports", llm_from_env())
+        best = results["financebench"]["retrieval"]["hybrid_rerank"]
+        print(
+            f"FinanceBench page hit@10 {best['page_hit@10']:.3f}; CUAD v2 F1 "
+            f"{results['cuad']['v2_provision']['f1']:.3f} -> reports/eval_real.md"
+        )
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(prog="dealroom")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -130,6 +152,10 @@ def main(argv: list[str] | None = None) -> None:
     ask.add_argument("question")
     ask.set_defaults(func=cmd_ask)
     sub.add_parser("demo").set_defaults(func=cmd_demo)
+    real = sub.add_parser("real", help="evaluation on real public data (FinanceBench, CUAD)")
+    real.add_argument("step", choices=["fetch", "index", "eval", "all"])
+    real.add_argument("--workers", type=int, default=2)
+    real.set_defaults(func=cmd_real)
     args = parser.parse_args(argv)
     args.func(args)
 

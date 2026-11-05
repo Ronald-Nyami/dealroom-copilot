@@ -49,6 +49,16 @@ make api      # then `make web` in a second terminal: http://localhost:3000
 
 All figures are in [`reports/eval.md`](reports/eval.md). CI regenerates the report and fails if it changed.
 
+## On real documents
+
+The synthetic data room is too small and too clean to trust those scores, so I ran the same code on two public datasets with human labels. Both are downloaded by checksum (`make eval-real`) and not committed.
+
+**FinanceBench** has 150 analyst questions on 84 real SEC filings, with the evidence page marked for each. Searching within the right filing, the best method puts an evidence page in the top 10 about half the time (BM25 53.3%, hybrid + rerank 52.0%), and in the top 5 only 26% of the time for the domain questions. That is far from the 98% on the synthetic data room. Filings are hundreds of pages of near-identical financial tables, and my fast extraction keeps table rows as text lines without their column headers. The stub model cannot do the arithmetic these questions need, so answer quality on real filings is not measured.
+
+**CUAD** has 510 commercial contracts labelled by lawyers. I scored the challenger's change-of-control detector on the 102-contract test split. The patterns I wrote for the synthetic contracts reach F1 0.533 (precision 63%, recall 46%). I rewrote them on the 408 training contracts and scored the test split once: F1 0.622. The challenger only raises an argument when the clause gives a termination right; that narrower rule flags 3 of the 26 contracts with a provision, all correctly.
+
+Both results are in [`reports/eval_real.md`](reports/eval_real.md).
+
 ## What is tested and what is only configured
 
 | Part | Status |
@@ -61,8 +71,8 @@ All figures are in [`reports/eval.md`](reports/eval.md). CI regenerates the repo
 
 ## Limitations
 
-- The data room is synthetic and small (37 files, 130 chunks), so the scores are higher than on a real one.
-- Thresholds and the lexical reranker were tuned on the same questions they are scored on; there is no held-out split.
+- The data room is synthetic and small (37 files, 130 chunks), so the scores are higher than on a real one. On real filings retrieval is much weaker (see above).
+- Thresholds and the lexical reranker were tuned on the synthetic questions they are scored on. Only the CUAD patterns have a held-out test split.
 - With the stub model, the answer metrics measure retrieval and passage selection, not generation.
 - The handwritten note is an oblique font with some jitter, not real handwriting.
 - The challenger finds the kinds of problems it has checks for. It is not a general fraud detector.

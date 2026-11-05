@@ -77,6 +77,30 @@ jobs:
           name: eval-onnx
           path: reports/eval_onnx.md
 
+  real-data-eval:
+    # Public filings and contracts pinned by checksum in data/real/manifest.json (about 180 MB).
+    runs-on: ubuntu-24.04
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr fonts-dejavu-core
+      - run: pip install -e .
+      - uses: actions/cache@v4
+        with:
+          path: .cache/real
+          key: real-${{ hashFiles('data/real/manifest.json', 'backend/dealroom/ingestion/**') }}
+      - run: dealroom real all --workers 4
+      - name: Committed report matches
+        run: git diff --stat -- reports/eval_real.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-real
+          path: reports/eval_real.md
+
   web:
     runs-on: ubuntu-24.04
     steps:

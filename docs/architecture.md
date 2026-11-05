@@ -21,6 +21,7 @@ flowchart LR
 | `backend/dealroom/retrieval` | BM25, dense vectors (local LSA offline; Azure OpenAI or ONNX `bge-small` optional), reciprocal rank fusion, reranker; in memory or Postgres + pgvector. |
 | `backend/dealroom/agents` | QA agent, IC memo drafter, IC challenger, review state machine, LangGraph graphs. |
 | `backend/dealroom/evaluation` | Metrics and the report in `reports/eval.md`. |
+| `backend/dealroom/realdata` | Downloads FinanceBench and CUAD by checksum, indexes each filing on its own, and scores retrieval (evidence page in the top k) and the change-of-control detector against human labels. Report in `reports/eval_real.md`. |
 | `mcp_server/dealroom_mcp` | MCP tools, role policy, approvals, hash-chained audit log. |
 | `web` | Next.js workspace and the Playwright test. |
 | `infra` | Terraform and Helm. See [deployment.md](deployment.md). |

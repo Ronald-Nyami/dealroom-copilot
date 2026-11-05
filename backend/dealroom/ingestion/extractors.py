@@ -107,8 +107,11 @@ def _inside(inner: tuple[float, float, float, float], outer: tuple[float, float,
 class LocalExtractor:
     name = "local"
 
-    def __init__(self, ocr: TesseractOcr | None = None) -> None:
+    def __init__(self, ocr: TesseractOcr | None = None, detect_tables: bool = True) -> None:
+        """``detect_tables=False`` skips cell-level table detection (about 100x faster on long
+        filings); table rows are then kept as layout-sorted text lines."""
         self.ocr = ocr or TesseractOcr()
+        self.detect_tables = detect_tables
 
     def extract(self, file: str, data: bytes) -> list[Element]:
         if file.lower().endswith(".xlsx"):
@@ -130,6 +133,9 @@ class LocalExtractor:
                     if text:
                         elements.append(Element(file, "ocr", text, page=page_no))
                     continue
+                if not self.detect_tables:
+                    elements.extend(self._page_lines(file, page_no, page))
+                    continue
                 tables = []
                 for table in plumber.pages[index].find_tables():
                     rows = [" | ".join(c or "" for c in row) for row in table.extract()]
@@ -137,6 +143,23 @@ class LocalExtractor:
                     tables.append(((x0, top, x1, bottom), "\n".join(rows)))
                 elements.extend(self._page_elements(file, page_no, page, tables))
         return elements
+
+    @staticmethod
+    def _page_lines(file: str, page_no: int, page: Any, size: int = 600) -> list[Element]:
+        """Layout-sorted lines grouped into paragraphs of about ``size`` characters, rows kept intact."""
+        out: list[Element] = []
+        buffer: list[str] = []
+        for line in page.get_text("text", sort=True).splitlines():
+            line = " ".join(line.split())
+            if not line:
+                continue
+            buffer.append(line)
+            if sum(len(x) for x in buffer) >= size:
+                out.append(Element(file, "paragraph", ". ".join(buffer), page=page_no))
+                buffer = []
+        if buffer:
+            out.append(Element(file, "paragraph", ". ".join(buffer), page=page_no))
+        return out
 
     @staticmethod
     def _page_elements(

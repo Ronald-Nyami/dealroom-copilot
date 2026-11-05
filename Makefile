@@ -1,4 +1,4 @@
-.PHONY: install dataroom ingest test eval eval-onnx demo api mcp web e2e lint typecheck check up
+.PHONY: install dataroom ingest test eval eval-onnx eval-real demo api mcp web e2e lint typecheck check up
 
 install:
 	pip install -e ".[dev]"
@@ -19,6 +19,9 @@ eval:              ## regenerate reports/eval.md and reports/results.json (offli
 eval-onnx:         ## same with pre-trained ONNX embeddings and cross-encoder (downloads models)
 	pip install -e ".[onnx]"
 	DEALROOM_RETRIEVAL=onnx dealroom eval
+
+eval-real:         ## FinanceBench (SEC filings) and CUAD (contracts): downloads about 180 MB of public data
+	dealroom real all
 
 demo:              ## question -> cited answer -> memo -> challenger -> review -> approval
 	dealroom demo

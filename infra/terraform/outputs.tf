@@ -52,7 +52,7 @@ output "docintel_endpoint" {
 
 output "helm_values" {
   description = "Paste into infra/helm/dealroom-copilot/values.cloud.yaml or pass with --set."
-  value       = {
+  value = {
     "azure.tenantId"                     = data.azurerm_client_config.current.tenant_id
     "azure.aiClientId"                   = azuread_application.ai.client_id
     "azure.workloadIdentityClientId"     = azurerm_user_assigned_identity.backend.client_id

@@ -144,7 +144,7 @@ resource "azurerm_key_vault_secret" "database_url" {
   name         = "database-url"
   key_vault_id = azurerm_key_vault.main.id
   content_type = "postgresql-dsn"
-  value        = format(
+  value = format(
     "postgresql://dealroom:%s@%s:5432/dealroom?sslmode=require",
     random_password.postgres.result,
     azurerm_postgresql_flexible_server.main.fqdn,

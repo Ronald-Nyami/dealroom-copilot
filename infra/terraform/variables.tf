@@ -49,7 +49,7 @@ variable "aks_private_cluster" {
 }
 
 variable "chat_model" {
-  type    = object({ name = string, version = string, capacity = number })
+  type = object({ name = string, version = string, capacity = number })
   default = {
     name     = "gpt-4o-mini"
     version  = "2024-07-18"
@@ -58,7 +58,7 @@ variable "chat_model" {
 }
 
 variable "embedding_model" {
-  type    = object({ name = string, version = string, capacity = number })
+  type = object({ name = string, version = string, capacity = number })
   default = {
     name     = "text-embedding-3-small"
     version  = "1"
@@ -77,7 +77,7 @@ variable "kubernetes_namespace" {
 }
 
 variable "tags" {
-  type    = map(string)
+  type = map(string)
   default = {
     project = "dealroom-copilot"
     data    = "synthetic"

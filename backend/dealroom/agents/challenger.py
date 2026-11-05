@@ -229,7 +229,7 @@ class Challenger:
                     )
                 continue
             share, _, share_chunk = shares[counterparty]
-            share_evidence = self._evidence(share_chunk, f"{counterparty}: {share:.1%} of FY2025 revenue")
+            share_evidence = self._evidence(share_chunk, f"{counterparty}, Share of revenue: {share:g}")
             citations = [clause, share_evidence]
             text = (
                 f"{counterparty} can terminate its agreement if a third party acquires control without its consent "
@@ -399,7 +399,7 @@ class Challenger:
         name, (share, _, chunk) = max(shares.items(), key=lambda item: item[1][0])
         if share < self.concentration_threshold:
             return []
-        evidence = self._evidence(chunk, f"{name}: {share:.1%} of FY2025 revenue")
+        evidence = self._evidence(chunk, f"{name}, Share of revenue: {share:g}")
         return [
             Argument(
                 "concentration",

@@ -1,0 +1,130 @@
+{{- $name := include "dealroom.name" . -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $name }}-web
+  labels:
+    {{- include "dealroom.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.web.replicas }}
+  selector:
+    matchLabels:
+      {{- include "dealroom.selector" (dict "root" . "component" "web") | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "dealroom.selector" (dict "root" . "component" "web") | nindent 8 }}
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: web
+          image: {{ include "dealroom.image" (dict "root" . "name" .Values.image.web) }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 3000
+          readinessProbe:
+            httpGet: { path: /, port: http }
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.web.resources | nindent 12 }}
+          securityContext:
+            {{- include "dealroom.securityContext" . | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $name }}-web
+  labels:
+    {{- include "dealroom.labels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "dealroom.selector" (dict "root" . "component" "web") | nindent 4 }}
+  ports:
+    - name: http
+      port: 3000
+      targetPort: http
+{{- if .Values.ingress.enabled }}
+---
+# /api goes straight to the backend; everything else to the web workspace.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $name }}
+  labels:
+    {{- include "dealroom.labels" . | nindent 4 }}
+  annotations:
+    nginx.ingress.kubernetes.io/auth-url: {{ .Values.ingress.auth.url | quote }}
+    nginx.ingress.kubernetes.io/auth-signin: {{ .Values.ingress.auth.signin | quote }}
+    nginx.ingress.kubernetes.io/auth-response-headers: {{ .Values.ingress.auth.responseHeaders | quote }}
+    nginx.ingress.kubernetes.io/proxy-buffering: "off"
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  tls:
+    - hosts: [{{ .Values.ingress.host | quote }}]
+      secretName: {{ .Values.ingress.tls.secretName }}
+  rules:
+    - host: {{ .Values.ingress.host | quote }}
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $name }}-backend
+                port: { name: http }
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $name }}-web
+                port: { name: http }
+{{- end }}
+{{- if .Values.networkPolicy.enabled }}
+---
+# Default deny for ingress; then only the ingress controller reaches web and backend,
+# and only pods of this release reach the MCP server.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ $name }}-default-deny
+  labels:
+    {{- include "dealroom.labels" . | nindent 4 }}
+spec:
+  podSelector: {}
+  policyTypes: [Ingress]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ $name }}-from-ingress
+  labels:
+    {{- include "dealroom.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchExpressions:
+      - key: app.kubernetes.io/component
+        operator: In
+        values: [web, backend]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .Values.networkPolicy.ingressNamespace }}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ $name }}-mcp-internal
+  labels:
+    {{- include "dealroom.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/component: mcp
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}

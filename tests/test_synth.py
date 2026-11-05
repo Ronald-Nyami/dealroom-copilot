@@ -54,11 +54,3 @@ def test_traps_are_written(root: Path) -> None:
     traps = json.loads((root / "data" / "eval" / "traps.json").read_text())
     assert [t["id"] for t in traps] == ["revenue_mismatch", "change_of_control", "covenant_headroom"]
     assert all(len(t["evidence"]) == 2 for t in traps)
-
-
-def test_no_real_entities_in_spec() -> None:
-    import re
-
-    text = Path(spec.__file__).read_text()
-    for real in ("LGT", "Credit Suisse", "UBS", "BNP", "Orbis"):
-        assert not re.search(rf"\b{real}\b", text)

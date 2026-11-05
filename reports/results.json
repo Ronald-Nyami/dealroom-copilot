@@ -1932,7 +1932,7 @@
         "argument": "FY2026 net leverage covenant headroom is thin"
       }
     ],
-    "argument_citation_precision": 0.8823529411764706,
+    "argument_citation_precision": 1.0,
     "arguments": [
       {
         "check": "figure_consistency",
@@ -1970,7 +1970,7 @@
             "n": 2,
             "chunk_id": "393af9e0b21b",
             "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
-            "text": "Brenntal Automotive GmbH: 31.2% of FY2025 revenue"
+            "text": "Brenntal Automotive GmbH, Share of revenue: 0.312"
           },
           {
             "n": 3,
@@ -2082,7 +2082,7 @@
             "n": 1,
             "chunk_id": "393af9e0b21b",
             "citation": "24_customer_concentration.xlsx, sheet FY2025, rows A1:A9",
-            "text": "Brenntal Automotive GmbH: 31.2% of FY2025 revenue"
+            "text": "Brenntal Automotive GmbH, Share of revenue: 0.312"
           }
         ]
       },

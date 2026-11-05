@@ -1,0 +1,67 @@
+# mode: offline -> stub model, local OCR, in-memory index (runs on any cluster, no Azure needed)
+# mode: cloud   -> Azure Document Intelligence and Azure OpenAI through private endpoints,
+#                  certificate from Key Vault, vectors in Postgres + pgvector
+mode: offline
+
+image:
+  registry: ghcr.io/ronald-nyami
+  backend: dealroom-copilot-backend
+  web: dealroom-copilot-web
+  tag: "0.1.0"
+  pullPolicy: IfNotPresent
+
+backend:
+  replicas: 1
+  resources:
+    requests: { cpu: 250m, memory: 768Mi }
+    limits: { cpu: "1", memory: 1536Mi }
+
+mcp:
+  enabled: true
+  replicas: 1
+  # Identity the MCP server acts as. In production, one MCP deployment per role,
+  # or an authenticating gateway in front of a streamable-HTTP server.
+  user: mcp-agent
+  role: analyst
+  resources:
+    requests: { cpu: 100m, memory: 512Mi }
+    limits: { cpu: 500m, memory: 1Gi }
+
+web:
+  replicas: 1
+  resources:
+    requests: { cpu: 100m, memory: 256Mi }
+    limits: { cpu: 500m, memory: 512Mi }
+
+index:
+  # Shared by the ingest job and the backend (Azure Files supports ReadWriteMany).
+  storageClass: azurefile-csi
+  size: 2Gi
+
+ingress:
+  enabled: true
+  className: nginx
+  host: dealroom.example.internal
+  tls:
+    secretName: dealroom-tls
+  # oauth2-proxy in front of Entra ID. It must inject X-User (email claim) and
+  # X-Role (app role claim) into the auth response; ingress-nginx then overwrites
+  # any client-supplied X-User / X-Role before the request reaches the backend.
+  auth:
+    url: http://oauth2-proxy.auth.svc.cluster.local/oauth2/auth
+    signin: https://dealroom.example.internal/oauth2/start?rd=$escaped_request_uri
+    responseHeaders: X-User,X-Role
+
+azure:
+  tenantId: ""
+  aiClientId: ""                 # service principal that calls the AI services with its certificate
+  workloadIdentityClientId: ""   # managed identity that may read the certificate from Key Vault
+  keyVaultName: ""
+  certificateName: dealroom-ai-client
+  openaiEndpoint: ""
+  openaiDeployment: gpt-4o-mini
+  documentIntelligenceEndpoint: ""
+
+networkPolicy:
+  enabled: true
+  ingressNamespace: ingress-nginx

@@ -1,0 +1,20 @@
+# Fill from `terraform output helm_values`, then:
+#   helm upgrade --install dealroom infra/helm/dealroom-copilot -n dealroom --create-namespace \
+#     -f infra/helm/dealroom-copilot/values.cloud.example.yaml
+mode: cloud
+
+image:
+  registry: acrdealroomxxxxx.azurecr.io
+
+ingress:
+  host: dealroom.example.internal
+
+azure:
+  tenantId: 00000000-0000-0000-0000-000000000000
+  aiClientId: 00000000-0000-0000-0000-000000000000
+  workloadIdentityClientId: 00000000-0000-0000-0000-000000000000
+  keyVaultName: kv-dealroom-xxxxx
+  certificateName: dealroom-ai-client
+  openaiEndpoint: https://oai-dealroom-xxxxx.openai.azure.com/
+  openaiDeployment: gpt-4o-mini
+  documentIntelligenceEndpoint: https://di-dealroom-xxxxx.cognitiveservices.azure.com/

@@ -82,12 +82,27 @@ class Retriever:
 
 
 def retriever_from_env(chunks: list[Chunk]) -> Retriever:
-    """``DEALROOM_RETRIEVAL=onnx`` uses pre-trained ONNX models; the default stays fully offline."""
+    """Pick models and store from the environment.
+
+    ``DEALROOM_RETRIEVAL=onnx`` uses pre-trained ONNX models (default: offline LSA and lexical reranker).
+    ``DATABASE_URL`` stores vectors in Postgres + pgvector (default: in memory).
+    """
     import os
 
+    embedder: Embedder
+    reranker: Reranker | None = None
     if os.environ.get("DEALROOM_RETRIEVAL", "local") == "onnx":  # pragma: no cover - needs model download
         from dealroom.retrieval.embeddings import OnnxEmbedder
         from dealroom.retrieval.rerank import CrossEncoderReranker
 
-        return Retriever(chunks, embedder=OnnxEmbedder(), reranker=CrossEncoderReranker())
-    return Retriever(chunks)
+        embedder, reranker = OnnxEmbedder(), CrossEncoderReranker()
+    else:
+        embedder = LsaEmbedder()
+    store: VectorStore | None = None
+    dsn = os.environ.get("DATABASE_URL")
+    if dsn:  # pragma: no cover - exercised by the postgres CI job
+        from dealroom.retrieval.store import PgVectorStore
+
+        embedder.fit([c.text for c in chunks])
+        store = PgVectorStore(dsn, embedder.dimensions)
+    return Retriever(chunks, embedder=embedder, store=store, reranker=reranker)

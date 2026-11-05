@@ -33,7 +33,7 @@ Recall@5 by question type (hybrid + rerank): cross_doc 75.0%, fact 98.1%, numeri
 | Largest customer can terminate on change of control | yes | Brenntal Automotive GmbH can terminate on change of control |
 | Net leverage covenant close to breach in FY2026 | yes | FY2026 net leverage covenant headroom is thin |
 
-Trap recall: 100.0%. Argument citation precision (quoted evidence found verbatim in the cited chunk): 88.2%. Arguments raised: 8.
+Trap recall: 100.0%. Argument citation precision (quoted evidence found verbatim in the cited chunk): 100.0%. Arguments raised: 8.
 
 ## Ingestion and data protection
 

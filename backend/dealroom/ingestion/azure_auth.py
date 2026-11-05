@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import base64
 import json
+import re
 import time
 import uuid
 from dataclasses import dataclass, field
@@ -25,6 +26,14 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import padding, rsa
 
 COGNITIVE_SCOPE = "https://cognitiveservices.azure.com/.default"
+
+
+def pem_block(data: bytes, label: str) -> bytes:
+    """Return the first PEM block whose label ends with ``label`` (e.g. "PRIVATE KEY", "CERTIFICATE")."""
+    match = re.search(rb"-----BEGIN ([A-Z ]*" + label.encode() + rb")-----.+?-----END \1-----", data, flags=re.DOTALL)
+    if match is None:
+        raise ValueError(f"no {label} block found")
+    return match.group(0) + b"\n"
 
 
 def _b64url(data: bytes) -> str:
@@ -47,7 +56,10 @@ class CertificateCredential:
     def from_files(
         cls, tenant_id: str, client_id: str, key_path: Path, cert_path: Path, **kwargs: object
     ) -> CertificateCredential:
-        return cls(tenant_id, client_id, key_path.read_bytes(), cert_path.read_bytes(), **kwargs)  # type: ignore[arg-type]
+        """Key and certificate may be two files or one PEM bundle (as Key Vault's CSI driver mounts it)."""
+        key = pem_block(key_path.read_bytes(), "PRIVATE KEY")
+        certificate = pem_block(cert_path.read_bytes(), "CERTIFICATE")
+        return cls(tenant_id, client_id, key, certificate, **kwargs)  # type: ignore[arg-type]
 
     @property
     def token_endpoint(self) -> str:

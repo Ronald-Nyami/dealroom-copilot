@@ -18,7 +18,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from dealroom.ingestion import pipeline
 from dealroom.ingestion.anonymiser import Anonymiser, MaskEvent, Vault, detect, jsonl_logger, placeholders_in
-from dealroom.ingestion.azure_auth import CertificateCredential
+from dealroom.ingestion.azure_auth import CertificateCredential, pem_block
 from dealroom.ingestion.chunker import Chunker, ChunkSettings, document_label
 from dealroom.ingestion.extractors import AzureDocumentIntelligenceExtractor, LocalExtractor, TesseractOcr, extract_xlsx
 from dealroom.ingestion.models import Chunk, Element
@@ -307,6 +307,17 @@ def test_remote_extractor_only_receives_redacted_files(tmp_path: Path) -> None:
     assert spec.CEO not in text and report.redacted_files == 1
     assert (tmp_path / "out" / "redacted" / spec.CVS.filename).exists()
     assert "Wyssbrod" not in (tmp_path / "out" / "chunks.jsonl").read_text()
+
+
+def test_credential_reads_a_single_pem_bundle(tmp_path: Path) -> None:
+    key_pem, cert_pem, _ = _key_and_cert()
+    (tmp_path / "bundle.pem").write_bytes(key_pem + cert_pem)
+    credential = CertificateCredential.from_files("t", "c", tmp_path / "bundle.pem", tmp_path / "bundle.pem")
+    assert b"PRIVATE" in credential.private_key_pem.splitlines()[0]
+    assert credential.certificate_pem.startswith(b"-----BEGIN CERTIFICATE-----")
+    assert credential.client_assertion().count(".") == 2
+    with pytest.raises(ValueError):
+        pem_block(b"nothing here", "CERTIFICATE")
 
 
 def test_extractor_from_env(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:

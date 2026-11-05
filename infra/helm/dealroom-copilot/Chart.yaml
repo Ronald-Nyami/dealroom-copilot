@@ -1,0 +1,6 @@
+apiVersion: v2
+name: dealroom-copilot
+description: Due-diligence assistant over a synthetic private-equity data room (backend, MCP server, web workspace)
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

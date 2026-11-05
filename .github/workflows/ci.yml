@@ -1,0 +1,140 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils fonts-dejavu-core
+      - run: pip install -e ".[dev,postgres]"
+      - name: Lint
+        run: ruff check . && ruff format --check .
+      - name: Types
+        run: python -m mypy
+      - name: Tests (coverage >= 90%)
+        run: pytest --cov --cov-report=term-missing --cov-report=xml
+      - name: Data room is reproducible
+        run: dealroom generate && git diff --exit-code -- data/
+      - name: Evaluation report is up to date
+        run: dealroom eval && git diff --exit-code -- reports/eval.md
+      - name: Demo runs offline
+        run: dealroom demo
+      - name: Hygiene (no real names, keys or client data)
+        run: bash scripts/check_hygiene.sh
+
+  postgres:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: dealroom
+          POSTGRES_PASSWORD: ci-only
+          POSTGRES_DB: dealroom
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dealroom" --health-interval 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://dealroom:ci-only@localhost:5432/dealroom
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr fonts-dejavu-core
+      - run: pip install -e ".[dev,postgres]"
+      - run: pytest -m postgres -q
+
+  onnx-eval:
+    # Pre-trained embeddings and cross-encoder: downloads ~150 MB of models.
+    runs-on: ubuntu-24.04
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils fonts-dejavu-core
+      - run: pip install -e ".[onnx]"
+      - run: DEALROOM_RETRIEVAL=onnx dealroom eval
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-onnx
+          path: reports/eval_onnx.md
+
+  web:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr fonts-dejavu-core
+      - run: pip install -e .
+      - run: npm ci
+        working-directory: web
+      - run: npm run lint && npm run typecheck
+        working-directory: web
+      - run: npx playwright install --with-deps chromium
+        working-directory: web
+      - run: npx playwright test
+        working-directory: web
+        env:
+          CI: "true"
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: web/playwright-report
+
+  infra:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+      - name: Terraform fmt and validate
+        working-directory: infra/terraform
+        run: |
+          terraform fmt -check -recursive
+          terraform init -backend=false
+          terraform validate
+      - uses: azure/setup-helm@v4
+        with:
+          version: v3.16.2
+      - name: Helm lint and render (offline and cloud values)
+        run: |
+          helm lint infra/helm/dealroom-copilot
+          helm lint infra/helm/dealroom-copilot -f infra/helm/dealroom-copilot/values.cloud.example.yaml
+          helm template dealroom infra/helm/dealroom-copilot > /dev/null
+          helm template dealroom infra/helm/dealroom-copilot \
+            -f infra/helm/dealroom-copilot/values.cloud.example.yaml > /dev/null
+
+  images:
+    runs-on: ubuntu-24.04
+    needs: [python, web]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f backend/Dockerfile -t dealroom-copilot-backend .
+      - run: docker build -t dealroom-copilot-web web
